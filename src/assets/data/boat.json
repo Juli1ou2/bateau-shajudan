@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "alt": "Photo d'un bateau de pêche bleu amarré au port",
+    "src": "assets/shajudan-logo.png",
+    "title": "L'Océanique",
+    "content": "L'Océanique est un bateau robuste conçu pour les sorties en mer et les longues sessions de pêche."
+  },
+  {
+    "id": 2,
+    "alt": "Image d'un bateau de pêche traditionnel avec des filets étendus",
+    "src": "assets/shajudan-logo.png",
+    "title": "Le Fileteur",
+    "content": "Le Fileteur est un bateau emblématique des côtes, parfait pour la pêche artisanale."
+  },
+  {
+    "id": 3,
+    "alt": "Photo d'un bateau de pêche moderne naviguant sur des eaux calmes",
+    "src": "assets/shajudan-logo.png",
+    "title": "L'Horizon",
+    "content": "L'Horizon allie modernité et praticité pour des sorties de pêche confortables et efficaces."
+  },
+  {
+    "id": 4,
+    "alt": "Image d'un bateau de pêche en bois sur une rivière",
+    "src": "assets/shajudan-logo.png",
+    "title": "La Rustique",
+    "content": "La Rustique offre une expérience authentique, parfaite pour la pêche en eaux douces."
+  }
+]

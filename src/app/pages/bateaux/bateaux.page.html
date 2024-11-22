@@ -10,4 +10,16 @@
       <ion-title size="large">bateaux</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div id="container">
+    @for (bateau of bateauList; track bateau.id) {
+      <app-list
+        (click)="getBateauInfo(bateau.id)"
+        [cardAlt]="bateau.alt"
+        [cardSrc]="bateau.src"
+        [title]="bateau.title"
+        [cardContent]="bateau.content"
+      ></app-list>
+    }
+  </div>
 </ion-content>
