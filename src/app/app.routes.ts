@@ -35,10 +35,22 @@ export const routes: Routes = [
         path: 'recettes',
         loadComponent: () => import('./pages/recettes/recettes.page').then( m => m.RecettesPage)
       },
+      {
+        path: 'panier',
+        loadComponent: () => import('./pages/panier/panier.page').then( m => m.PanierPage)
+      },
     ]
+  },  {
+    path: 'infos-bateau',
+    loadComponent: () => import('./pages/bateaux/infos-bateau/infos-bateau.page').then( m => m.InfosBateauPage)
   },
   {
-    path: 'panier',
-    loadComponent: () => import('./pages/panier/panier.page').then( m => m.PanierPage)
+    path: 'infos-recette',
+    loadComponent: () => import('./pages/recettes/infos-recette/infos-recette.page').then( m => m.InfosRecettePage)
   },
+  {
+    path: 'infos-restaurant',
+    loadComponent: () => import('./pages/restaurants/infos-restaurant/infos-restaurant.page').then( m => m.InfosRestaurantPage)
+  },
+
 ];
