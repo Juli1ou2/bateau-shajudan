@@ -12,14 +12,19 @@
   </ion-header>
 
   <div id="container">
-    @for (bateau of bateauList; track bateau.id) {
-      <app-list
-        (click)="getBateauInfo(bateau.id)"
-        [cardAlt]="bateau.alt"
-        [cardSrc]="bateau.src"
-        [title]="bateau.title"
-        [cardContent]="bateau.content"
-      ></app-list>
-    }
+    <ion-grid>
+      <ion-row>
+        <ion-col size="auto" style="margin: 0 auto;">
+          @for (bateau of bateauList; track bateau.id) {
+            <app-list
+              (click)="getBateauInfo(bateau)"
+              [cardAlt]="bateau.alt"
+              [cardSrc]="bateau.src"
+              [title]="bateau.title"
+            ></app-list>
+          }
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>
