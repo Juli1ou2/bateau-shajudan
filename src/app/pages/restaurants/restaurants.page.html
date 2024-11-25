@@ -10,4 +10,16 @@
       <ion-title size="large">Restaurants</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div id="container">
+    @for (restaurant of restaurantList; track restaurant.id) {
+      <app-list
+        (click)="getRestaurantInfo(restaurant.id)"
+        [cardAlt]="restaurant.alt"
+        [cardSrc]="restaurant.src"
+        [title]="restaurant.title"
+        [cardContent]="restaurant.content"
+      ></app-list>
+    }
+  </div>
 </ion-content>
