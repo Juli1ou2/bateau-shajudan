@@ -1,13 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>infos-bateau</ion-title>
+    <ion-title>Bateau {{ bateau.title }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">infos-bateau</ion-title>
+      <ion-title size="large">Bateau {{ bateau.title }}</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-card id="card-boat">
+    <ion-card-header>
+      <ion-card-title>{{ bateau.title }}</ion-card-title>
+    </ion-card-header>
+
+    <img id="image-boat-info"
+         [alt]="bateau.alt"
+         [src]="bateau.src"
+         style="margin: 0 auto"
+    />
+
+    <div>
+
+      <p class="ion-text-center">
+        Mise en service : {{ bateau.dateMiseEnService }}
+      </p>
+
+      <ion-card-content>
+        {{ bateau.content }}
+      </ion-card-content>
+    </div>
+  </ion-card>
 </ion-content>

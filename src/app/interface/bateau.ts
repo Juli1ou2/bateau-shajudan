@@ -4,4 +4,5 @@ export interface Bateau {
   src: string;
   title: string;
   content: string;
+  dateMiseEnService: string;
 }

@@ -1,14 +1,18 @@
-<ion-card>
+<ion-col size-xs="12" size-sm="4" size-md="4">
+  <ion-card id="card-boat">
     <img [alt]="cardAlt"
          [src]="cardSrc"
-         width="100px"
          style="margin: 0 auto"
     />
-    <ion-card-header>
-        <ion-card-title>{{ title }}</ion-card-title>
-    </ion-card-header>
 
-    <ion-card-content>
+    <div>
+      <ion-card-header>
+        <ion-card-title>{{ title }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
         {{ cardContent }}
-    </ion-card-content>
-</ion-card>
+      </ion-card-content>
+    </div>
+  </ion-card>
+</ion-col>
