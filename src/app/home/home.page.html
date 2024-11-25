@@ -12,6 +12,57 @@
   </ion-header>
 
   <div class="container">
-    <ion-button size="small" expand="full" routerLink="/infos-contacts">Contact</ion-button>
+    <img src="../../assets/shajudan-logo.svg" width="40%" />
+    <p>
+      Vente en direct de notre bateau<br />Produits selon la saison, livraison
+      sur Paris
+    </p>
+    <a href="tel:0663999978">06 63 99 99 78</a>
+    <a href="https://facebook.com/lebateaudethibault" target="_blank"
+      >facebook.com/lebateaudethibault</a
+    >
+    <ion-grid class="ion-margin-top">
+      <ion-row>
+        <ion-col
+          ><ion-card routerLink="/produits" color="primary">
+            <ion-card-header>
+              <ion-card-title>Produits et promotions</ion-card-title>
+            </ion-card-header>
+          </ion-card></ion-col
+        >
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"
+          ><ion-card routerLink="/bateaux" color="primary">
+            <ion-card-header>
+              <ion-card-title>Bateaux</ion-card-title>
+            </ion-card-header>
+          </ion-card></ion-col
+        >
+        <ion-col size="6"
+          ><ion-card routerLink="/restaurants" color="primary">
+            <ion-card-header>
+              <ion-card-title>Restaurants</ion-card-title>
+            </ion-card-header>
+          </ion-card></ion-col
+        >
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"
+          ><ion-card routerLink="/recettes" color="primary">
+            <ion-card-header>
+              <ion-card-title>Recettes</ion-card-title>
+            </ion-card-header>
+          </ion-card></ion-col
+        >
+        <ion-col size="6"
+          ><ion-card routerLink="/infos-contacts" color="primary">
+            <ion-card-header>
+              <ion-card-title>Contacts</ion-card-title>
+            </ion-card-header>
+          </ion-card></ion-col
+        >
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>
