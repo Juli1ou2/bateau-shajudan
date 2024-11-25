@@ -1,0 +1,22 @@
+ion-icon {
+  color: var(--ion-color-bleu-5);
+  margin: 0 5px;
+}
+
+img {
+  border-radius: 10px;
+  border: 5px solid var(--ion-color-bleu-5);
+  width: 70%;
+  margin: 10% 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+}
+
+p {
+    text-align: center;
+}
