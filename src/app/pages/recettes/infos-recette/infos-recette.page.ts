@@ -13,6 +13,7 @@ import {
 } from '@ionic/angular/standalone';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Recette } from 'src/app/interface/recette';
+import { HeaderComponent } from 'src/app/header/header.component';
 
 @Component({
   selector: 'app-infos-recette',
@@ -30,9 +31,11 @@ import { Recette } from 'src/app/interface/recette';
     IonToolbar,
     CommonModule,
     FormsModule,
+    HeaderComponent,
   ],
 })
 export class InfosRecettePage implements OnInit {
+  title: string = 'Détails recette';
   recette: Recette;
 
   constructor(private router: Router, private route: ActivatedRoute) {}

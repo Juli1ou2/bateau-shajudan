@@ -6,6 +6,7 @@ import {
   IonButtons,
   IonBackButton,
 } from '@ionic/angular/standalone';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-header',
@@ -17,7 +18,11 @@ import {
 export class HeaderComponent implements OnInit {
   @Input() title!: string;
 
-  constructor() {}
+  constructor(private navController: NavController) {}
 
   ngOnInit() {}
+
+  goPreviousPage(){
+    this.navController.back();
+  }
 }

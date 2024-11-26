@@ -39,8 +39,8 @@ import { boat, fish, restaurant, call, book } from 'ionicons/icons';
   ],
 })
 export class HomePage {
-  title: 'Shajudan Boat';
-  
+  title: string = 'Shajudan Boat';
+
   constructor() {
     addIcons({ boat, fish, restaurant, call, book });
   }

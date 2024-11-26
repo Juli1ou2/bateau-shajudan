@@ -14,6 +14,7 @@ import { Recette } from 'src/app/interface/recette';
 import { RecettesService } from 'src/app/services/recettes.service';
 import { ListComponent } from 'src/app/list/list.component';
 import { NavigationExtras, Router } from '@angular/router';
+import { HeaderComponent } from 'src/app/header/header.component';
 
 @Component({
   selector: 'app-recettes',
@@ -31,9 +32,11 @@ import { NavigationExtras, Router } from '@angular/router';
     CommonModule,
     FormsModule,
     ListComponent,
+    HeaderComponent,
   ],
 })
 export class RecettesPage implements OnInit {
+  title: string = 'Idées recettes';
   recettes: Recette[];
   private recetteService: RecettesService = inject(RecettesService);
   private router: Router = inject(Router);
