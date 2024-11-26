@@ -10,4 +10,21 @@
       <ion-title size="large">Produits</ion-title>
     </ion-toolbar>
   </ion-header>
+
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Nos produits</ion-label>
+    </ion-list-header>
+    @for (produit of produitList; track produit.id) {
+      <ion-item>
+        <ion-avatar>
+          <img [src]="produit.src" [alt]="produit.name">
+        </ion-avatar>
+        <ion-label class="ion-text-center">{{ produit.name }} ({{ produit.unit }})</ion-label>
+        <ion-label class="ion-text-end">{{ produit.price | number:'1.2-2' }} €</ion-label>
+      </ion-item>
+    }
+  </ion-list>
+
 </ion-content>
