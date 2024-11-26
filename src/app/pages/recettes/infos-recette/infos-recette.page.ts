@@ -12,8 +12,8 @@ import {
   IonCardHeader,
 } from '@ionic/angular/standalone';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Recette } from 'src/app/interface/recette';
-import { HeaderComponent } from 'src/app/header/header.component';
+import { Recette } from 'src/app/core/interface/recette';
+import { HeaderComponent } from 'src/app/ui/header/header.component';
 
 @Component({
   selector: 'app-infos-recette',

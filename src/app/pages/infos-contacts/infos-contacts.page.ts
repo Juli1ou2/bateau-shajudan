@@ -10,7 +10,7 @@ import {
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { logoFacebook, logoYoutube, logoInstagram } from 'ionicons/icons';
-import { HeaderComponent } from 'src/app/header/header.component';
+import { HeaderComponent } from 'src/app/ui/header/header.component';
 
 @Component({
   selector: 'app-infos-contacts',

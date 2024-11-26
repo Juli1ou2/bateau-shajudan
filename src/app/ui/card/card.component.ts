@@ -2,15 +2,15 @@ import {Component, Input, OnInit} from '@angular/core';
 import {IonicModule} from "@ionic/angular";
 
 @Component({
-  selector: 'app-list',
+  selector: 'app-card',
   standalone: true,
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss'],
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.scss'],
   imports: [
     IonicModule
   ]
 })
-export class ListComponent implements OnInit{
+export class CardComponent implements OnInit{
 
   @Input()
   title: string;

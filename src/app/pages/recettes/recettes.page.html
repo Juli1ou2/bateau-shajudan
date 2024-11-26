@@ -12,12 +12,12 @@
       <ion-row>
         <ion-col style="margin: 0 auto">
           @for (recette of recettes; track recette.id) {
-          <app-list
+          <app-card
             (click)="getRecetteInfos(recette)"
             [cardAlt]="recette.alt"
             [cardSrc]="recette.src"
             [title]="recette.title"
-          ></app-list>
+          ></app-card>
           }
         </ion-col>
       </ion-row>

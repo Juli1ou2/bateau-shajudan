@@ -2,9 +2,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Bateau } from '../../../interface/bateau';
+import { Bateau } from '../../../core/interface/bateau';
 import { IonicModule } from '@ionic/angular';
-import { HeaderComponent } from 'src/app/header/header.component';
+import { HeaderComponent } from 'src/app/ui/header/header.component';
 
 @Component({
   selector: 'app-infos-bateau',

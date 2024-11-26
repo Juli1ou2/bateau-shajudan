@@ -1,12 +1,12 @@
 import { Component, inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ListComponent } from '../../list/list.component';
-import { BateauService } from '../../services/bateau.service';
-import { Bateau } from '../../interface/bateau';
+import { CardComponent } from '../../ui/card/card.component';
+import { BateauxService } from '../../services/bateaux.service';
+import { Bateau } from '../../core/interface/bateau';
 import { NavigationExtras, Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { HeaderComponent } from 'src/app/header/header.component';
+import { HeaderComponent } from 'src/app/ui/header/header.component';
 
 @Component({
   selector: 'app-bateaux',
@@ -16,7 +16,7 @@ import { HeaderComponent } from 'src/app/header/header.component';
   imports: [
     CommonModule,
     FormsModule,
-    ListComponent,
+    CardComponent,
     IonicModule,
     HeaderComponent,
   ],
@@ -25,7 +25,7 @@ import { HeaderComponent } from 'src/app/header/header.component';
 export class BateauxPage implements OnInit {
   title: string = 'Bateaux';
   bateauList: Bateau[];
-  bateauService: BateauService = inject(BateauService);
+  bateauService: BateauxService = inject(BateauxService);
 
   constructor(private router: Router) {}
 
