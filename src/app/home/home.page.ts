@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {
@@ -22,6 +23,7 @@ import { boat, fish, restaurant, call, book } from 'ionicons/icons';
   styleUrls: ['home.page.scss'],
   standalone: true,
   imports: [
+    CommonModule,
     IonIcon,
     IonCol,
     IonRow,
@@ -37,6 +39,8 @@ import { boat, fish, restaurant, call, book } from 'ionicons/icons';
   ],
 })
 export class HomePage {
+  title: 'Shajudan Boat';
+  
   constructor() {
     addIcons({ boat, fish, restaurant, call, book });
   }
