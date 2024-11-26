@@ -28,9 +28,21 @@ export class ProduitsPage implements OnInit {
       next: (products)=> {
         this.produitList = products
         this.produitList.sort((a, b) => a.name.localeCompare(b.name));
+
+        this.calculNewPrice()
       },
       error: err => console.log(err)
     })
+  }
+
+  calculNewPrice() {
+    for (let produit of this.produitList) {
+      if (produit.discount && produit.discount > 0) {
+        produit['newPrice'] = produit.price - (produit.price * produit.discount / 100);
+      } else {
+        produit['newPrice'] = produit.price;
+      }
+    }
   }
 
 }

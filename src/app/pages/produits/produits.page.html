@@ -14,15 +14,37 @@
 
   <ion-list>
     <ion-list-header>
-      <ion-label>Nos produits</ion-label>
+      <ion-label>Nos produits frais</ion-label>
     </ion-list-header>
     @for (produit of produitList; track produit.id) {
-      <ion-item>
+      <ion-item [disabled]="!produit.availability" style="position: relative">
+        <img
+          *ngIf="!produit.availability"
+          style="position: absolute; left: 10px; width: 70px"
+          src="assets/victime2.jpg"
+          alt="victime de son succès">
         <ion-avatar>
           <img [src]="produit.src" [alt]="produit.name">
         </ion-avatar>
-        <ion-label class="ion-text-center">{{ produit.name }} ({{ produit.unit }})</ion-label>
-        <ion-label class="ion-text-end">{{ produit.price | number:'1.2-2' }} €</ion-label>
+        <ion-label>
+          <p>{{ produit.name }} ({{ produit.unit }})</p>
+          <p>{{ produit.comments }}</p>
+        </ion-label>
+        <p *ngIf="produit.discount">
+          <img
+            [style.width.px]="20"
+            [style.margin-right.px]="13"
+            src="assets/icon/promotion.png"
+            alt="En promotion">
+        </p>
+        <div id="promo-container">
+          <p class="ion-text-end">
+            {{ produit.newPrice | number:'1.2-2' }} €
+          </p>
+          <p *ngIf="produit.discount">
+            <s>{{ produit.price | number:'1.2-2' }} €</s>
+          </p>
+        </div>
       </ion-item>
     }
   </ion-list>

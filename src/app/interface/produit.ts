@@ -10,4 +10,5 @@ export interface Produit {
   discount: number;
   comments: string;
   owner: string;
+  newPrice?: number
 }
