@@ -2,7 +2,7 @@
   {
     "id": 1,
     "alt": "Photo d'un bateau de pêche bleu amarré au port",
-    "src": "assets/bateau-de-peche-1.jpg",
+    "src": "assets/images/bateaux/bateau-de-peche-1.jpg",
     "title": "L'Océanique",
     "content": "L'Océanique est un bateau robuste conçu pour les sorties en mer et les longues sessions de pêche.",
     "dateMiseEnService": "14-12-1997"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "alt": "Image d'un bateau de pêche traditionnel avec des filets étendus",
-    "src": "assets/fishing-boat-2.jpg",
+    "src": "assets/images/bateaux/fishing-boat-2.jpg",
     "title": "Le Fileteur",
     "content": "Le Fileteur est un bateau emblématique des côtes, parfait pour la pêche artisanale.",
     "dateMiseEnService": "04-03-2001"
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "alt": "Photo d'un bateau de pêche moderne naviguant sur des eaux calmes",
-    "src": "assets/fishing-boat-3.jpg",
+    "src": "assets/images/bateaux/fishing-boat-3.jpg",
     "title": "L'Horizon",
     "content": "L'Horizon allie modernité et praticité pour des sorties de pêche confortables et efficaces.",
     "dateMiseEnService": "11-11-2001"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "alt": "Image d'un bateau de pêche en bois sur une rivière",
-    "src": "assets/fishing-boat-4.jpg",
+    "src": "assets/images/bateaux/fishing-boat-4.jpg",
     "title": "La Rustique",
     "content": "La Rustique offre une expérience authentique, parfaite pour la pêche en eaux douces.",
     "dateMiseEnService": "14-07-2001"
