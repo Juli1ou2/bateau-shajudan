@@ -10,6 +10,7 @@ import {
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { logoFacebook, logoYoutube, logoInstagram } from 'ionicons/icons';
+import { HeaderComponent } from 'src/app/ui/header/header.component';
 
 @Component({
   selector: 'app-infos-contacts',
@@ -24,9 +25,12 @@ import { logoFacebook, logoYoutube, logoInstagram } from 'ionicons/icons';
     IonToolbar,
     CommonModule,
     FormsModule,
+    HeaderComponent,
   ],
 })
 export class InfosContactsPage implements OnInit {
+  title: string = 'Informations';
+
   constructor() {
     addIcons({ logoFacebook, logoYoutube, logoInstagram });
   }

@@ -10,10 +10,11 @@ import {
   IonRow,
   IonCol,
 } from '@ionic/angular/standalone';
-import { Recette } from 'src/app/interface/recette';
+import { Recette } from 'src/app/core/interface/recette';
 import { RecettesService } from 'src/app/services/recettes.service';
-import { ListComponent } from 'src/app/list/list.component';
+import { CardComponent } from 'src/app/ui/card/card.component';
 import { NavigationExtras, Router } from '@angular/router';
+import { HeaderComponent } from 'src/app/ui/header/header.component';
 
 @Component({
   selector: 'app-recettes',
@@ -30,10 +31,12 @@ import { NavigationExtras, Router } from '@angular/router';
     IonCol,
     CommonModule,
     FormsModule,
-    ListComponent,
+    CardComponent,
+    HeaderComponent,
   ],
 })
 export class RecettesPage implements OnInit {
+  title: string = 'Idées recettes';
   recettes: Recette[];
   private recetteService: RecettesService = inject(RecettesService);
   private router: Router = inject(Router);

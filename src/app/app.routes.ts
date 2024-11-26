@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { TabsComponent } from './tabs/tabs.component';
+import { TabsComponent } from './ui/tabs/tabs.component';
 
 export const routes: Routes = [
   {
@@ -13,7 +13,7 @@ export const routes: Routes = [
       },
       {
         path: 'home',
-        loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
+        loadComponent: () => import('./pages/home/home.page').then((m) => m.HomePage),
       },
       {
         path: 'infos-contacts',
@@ -53,5 +53,4 @@ export const routes: Routes = [
       },
     ]
   },
-
 ];
