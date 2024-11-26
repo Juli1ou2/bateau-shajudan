@@ -10,4 +10,21 @@
       <ion-title size="large">Idées recettes</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div id="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col style="margin: 0 auto">
+          @for (recette of recettes; track recette.id) {
+          <app-list
+            (click)="getRecetteInfos(recette)"
+            [cardAlt]="recette.alt"
+            [cardSrc]="recette.src"
+            [title]="recette.title"
+          ></app-list>
+          }
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
