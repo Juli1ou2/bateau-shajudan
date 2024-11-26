@@ -2,7 +2,7 @@ import {Component, inject, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {ProduitService} from "../../services/produit.service";
-import {Produit} from "../../interface/produit";
+import {Produit} from "../../core/interface/produit";
 import {IonicModule} from "@ionic/angular";
 
 @Component({
