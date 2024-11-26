@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "src": "assets/bar-de-ligne-gourpe.jpg",
+    "src": "assets/images/produits/bar-de-ligne-gourpe.jpg",
     "name": "Filet Bar de ligne",
     "category": 0,
     "price": 7.0,
@@ -14,7 +14,7 @@
   },
   {
     "id": 2,
-    "src": "assets/filet-de-bar.jpg",
+    "src": "assets/images/produits/filet-de-bar.jpg",
     "name": "Bar de ligne portion",
     "category": 0,
     "price": 10.0,
@@ -27,7 +27,7 @@
   },
   {
     "id": 3,
-    "src":  "assets/bar-vide-de-ligne.jpg",
+    "src":  "assets/images/produits/bar-vide-de-ligne.jpg",
     "name": "Bar de ligne",
     "category": 0,
     "price": 30.0,
@@ -40,7 +40,7 @@
   },
   {
     "id": 4,
-    "src":  "assets/lieu-jaune-ligne.jpg",
+    "src":  "assets/images/produits/lieu-jaune-ligne.jpg",
     "name": "Lieu jaune de ligne",
     "category": 0,
     "price": 12.0,
@@ -53,7 +53,7 @@
   },
   {
     "id": 5,
-    "src":  "assets/Filets-de-julienne.jpg",
+    "src":  "assets/images/produits/Filets-de-julienne.jpg",
     "name": "Filet Julienne",
     "category": 0,
     "price": 19.0,
@@ -66,7 +66,7 @@
   },
   {
     "id": 6,
-    "src":  "assets/moules2.jpg",
+    "src":  "assets/images/produits/moules2.jpg",
     "name": "Moules de pêche",
     "category": 1,
     "price": 7.0,
@@ -79,7 +79,7 @@
   },
   {
     "id": 7,
-    "src":  "assets/huitres--scaled.jpg",
+    "src":  "assets/images/produits/huitres--scaled.jpg",
     "name": "Huitres N°2 St Vaast",
     "category": 1,
     "price": 9.5,
@@ -92,7 +92,7 @@
   },
   {
     "id": 8,
-    "src":  "assets/huitres--scaled.jpg",
+    "src":  "assets/images/produits/huitres--scaled.jpg",
     "name": "Huitres N°2 St Vaast",
     "category": 1,
     "price": 38.0,
@@ -105,7 +105,7 @@
   },
   {
     "id": 9,
-    "src":  "assets/arraignee-de-mer.jpg",
+    "src":  "assets/images/produits/araignee-de-mer.jpg",
     "name": "Araignées",
     "category": 2,
     "price": 7.0,
@@ -118,7 +118,7 @@
   },
   {
     "id": 10,
-    "src":  "assets/bouquets-cuit.jpg",
+    "src":  "assets/images/produits/bouquets-cuit.jpg",
     "name": "Bouquets cuits",
     "category": 1,
     "price": 8.0,
@@ -131,7 +131,7 @@
   },
   {
     "id": 12,
-    "src":  "assets/aile-de-raie.jpg",
+    "src":  "assets/images/produits/aile-de-raie.jpg",
     "name": "Aile de raie",
     "category": 0,
     "price": 10.0,
@@ -144,7 +144,7 @@
   },
   {
     "id": 13,
-    "src":  "assets/huitre-or.jpg",
+    "src":  "assets/images/produits/huitre-or.jpg",
     "name": "Huîtres N°2 OR St Vaast",
     "category": 1,
     "price": 12.0,
@@ -157,7 +157,7 @@
   },
   {
     "id": 14,
-    "src":  "assets/huitre-or.jpg",
+    "src":  "assets/images/produits/huitre-or.jpg",
     "name": "Huîtres N°2 OR St Vaast",
     "category": 1,
     "price": 24.0,
@@ -170,7 +170,7 @@
   },
   {
     "id": 15,
-    "src":  "assets/huitre-or.jpg",
+    "src":  "assets/images/produits/huitre-or.jpg",
     "name": "Huîtres N°2 OR St Vaast",
     "category": 1,
     "price": 48.0,
@@ -183,7 +183,7 @@
   },
   {
     "id": 16,
-    "src":  "assets/huitres--scaled.jpg",
+    "src":  "assets/images/produits/huitres--scaled.jpg",
     "name": "Huîtres N°2 St Vaast",
     "category": 1,
     "price": 19.0,
