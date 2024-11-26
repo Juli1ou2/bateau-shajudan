@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { TabsComponent } from './tabs/tabs.component';
+import { TabsComponent } from './ui/tabs/tabs.component';
 
 export const routes: Routes = [
   {
@@ -13,7 +13,7 @@ export const routes: Routes = [
       },
       {
         path: 'home',
-        loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
+        loadComponent: () => import('./pages/home/home.page').then((m) => m.HomePage),
       },
       {
         path: 'infos-contacts',
@@ -39,18 +39,18 @@ export const routes: Routes = [
         path: 'panier',
         loadComponent: () => import('./pages/panier/panier.page').then( m => m.PanierPage)
       },
+      {
+        path: 'infos-bateau',
+        loadComponent: () => import('./pages/bateaux/infos-bateau/infos-bateau.page').then( m => m.InfosBateauPage)
+      },
+      {
+        path: 'infos-recette',
+        loadComponent: () => import('./pages/recettes/infos-recette/infos-recette.page').then( m => m.InfosRecettePage)
+      },
+      {
+        path: 'infos-restaurant',
+        loadComponent: () => import('./pages/restaurants/infos-restaurant/infos-restaurant.page').then( m => m.InfosRestaurantPage)
+      },
     ]
-  },  {
-    path: 'infos-bateau',
-    loadComponent: () => import('./pages/bateaux/infos-bateau/infos-bateau.page').then( m => m.InfosBateauPage)
   },
-  {
-    path: 'infos-recette',
-    loadComponent: () => import('./pages/recettes/infos-recette/infos-recette.page').then( m => m.InfosRecettePage)
-  },
-  {
-    path: 'infos-restaurant',
-    loadComponent: () => import('./pages/restaurants/infos-restaurant/infos-restaurant.page').then( m => m.InfosRestaurantPage)
-  },
-
 ];

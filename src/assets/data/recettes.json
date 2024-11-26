@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "title": "Homard",
+    "src": "https://images.radio-canada.ca/q_auto,w_844/v1/alimentation/recette/16x9/homard-recettes-mordu.jpg",
+    "alt": "image recette homard",
+    "etapes": [
+      "Plonger le homard dans une grande casserole d'eau bouillante salée pendant 8 minutes.",
+      "Sortir le homard et le plonger immédiatement dans de l'eau glacée pour stopper la cuisson.",
+      "Décortiquer le homard en récupérant la chair des pinces et de la queue.",
+      "Préparer une sauce beurre citronnée en mélangeant du beurre fondu, du jus de citron, et une pincée de sel.",
+      "Faire légèrement revenir la chair du homard dans la sauce avant de servir."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "St-Jacques",
+    "src": "https://res.cloudinary.com/hv9ssmzrz/image/fetch/c_fill,f_auto,h_387,q_auto,w_650/https://s3-eu-west-1.amazonaws.com/images-ca-1-0-1-eu/tag_photos/original/89809/noix-de-saint-jacques-pixabay-culinary-g5a427fcf4_1280.jpg",
+    "alt": "image recette coquilles St-Jacques",
+    "etapes": [
+      "Nettoyer les noix de Saint-Jacques et les sécher avec du papier absorbant.",
+      "Faire chauffer une poêle avec un peu de beurre et d'huile d'olive.",
+      "Saisir les Saint-Jacques 1 à 2 minutes de chaque côté jusqu'à obtenir une légère coloration dorée.",
+      "Déglacer la poêle avec un filet de vin blanc ou de jus de citron.",
+      "Servir immédiatement avec une sauce beurre blanc ou une purée de légumes."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Bar",
+    "src": "https://img-3.journaldesfemmes.fr/HzEBLuGz7zZ9WJ9JjSV94c0S-oI=/750x500/56ae7f66cfd54744823d0100bb53b330/ccmcms-jdf/39806399.jpg",
+    "alt": "image recette bar",
+    "etapes": [
+      "Préchauffer le four à 200°C.",
+      "Préparer le bar en l'écaillant, le vidant et le rinçant à l'eau froide.",
+      "Farcir le bar avec des rondelles de citron, des brins de thym, et un peu d'ail.",
+      "Déposer le bar sur une plaque avec un filet d'huile d'olive, du sel et du poivre.",
+      "Cuire au four pendant 20 à 25 minutes selon la taille du poisson."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Tourteau",
+    "src": "https://www.pavillonfrance.fr/sites/default/files/styles/hero_image/public/tourteau.jpeg?itok=Gq5mhUhW",
+    "alt": "image recette tourteau",
+    "etapes": [
+      "Plonger le tourteau vivant dans une grande casserole d'eau bouillante salée et cuire pendant 15 à 20 minutes.",
+      "Sortir le tourteau et le laisser refroidir avant de le décortiquer.",
+      "Récupérer la chair et éliminer les cartilages et coquilles.",
+      "Préparer une mayonnaise maison en battant un jaune d'œuf, de la moutarde, et de l'huile tout en fouettant.",
+      "Servir la chair de tourteau avec la mayonnaise et des quartiers de citron."
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Lieu",
+    "src": "https://cache.marieclaire.fr/data/photo/w1000_c17/cuisine/4o/papillotes-de-lieu-noir-aux-poivrons-rouges-et-paprika.webp",
+    "alt": "image recette lieu",
+    "etapes": [
+      "Préchauffer une poêle avec un filet d'huile d'olive.",
+      "Assaisonner les filets de lieu avec du sel, du poivre et un peu de paprika.",
+      "Faire cuire les filets côté peau en premier pendant 3 à 4 minutes.",
+      "Retourner les filets et poursuivre la cuisson 2 à 3 minutes.",
+      "Servir avec une sauce beurre blanc et des légumes vapeur."
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Huîtres",
+    "src": "https://www.fresh.fr/wp-content/uploads/2021/10/Huitres-fines-Marennes-Oleron-scaled-e1634119349178-1593x1080.jpg",
+    "alt": "image recette huîtres",
+    "etapes": [
+      "Ouvrir les huîtres avec un couteau spécial en veillant à ne pas abîmer la coquille.",
+      "Vérifier qu'il n'y a pas de morceaux de coquille dans l'eau des huîtres.",
+      "Préparer une vinaigrette au vinaigre de vin rouge et échalotes finement hachées.",
+      "Disposer les huîtres sur un lit de glace pilée.",
+      "Servir immédiatement avec la vinaigrette ou nature avec un filet de citron."
+    ]
+  }
+]
