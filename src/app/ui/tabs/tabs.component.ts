@@ -6,7 +6,7 @@ import {
   IonTabBar,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { cart, home, boat, fish, restaurant } from 'ionicons/icons';
+import { cart, home, boat, fish, restaurant, moonOutline, personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-tabs',

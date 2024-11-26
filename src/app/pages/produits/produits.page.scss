@@ -1,0 +1,21 @@
+ion-avatar {
+  --border-radius: 4px;
+  width: 90px;
+  height: 90px;
+  object-fit: fill;
+  margin: 2% 5% 2% 0;
+}
+
+#promo-container {
+  //display: flex;
+  //flex-direction: column;
+  p {
+    margin: 0;
+  }
+
+  p:nth-child(2) {
+    font-size: 85%;
+    text-align: end;
+  }
+}
+

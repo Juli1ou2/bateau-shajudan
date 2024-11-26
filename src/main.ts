@@ -19,6 +19,8 @@ import localeFr from '@angular/common/locales/fr';
 
 registerLocaleData(localeFr);
 
+
+
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
