@@ -12,10 +12,10 @@ import { OverlayEventDetail } from '@ionic/core/components';
   templateUrl: './produits.page.html',
   styleUrls: ['./produits.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule]
+  imports: [CommonModule, FormsModule, IonicModule, HeaderComponent],
 })
 export class ProduitsPage implements OnInit {
-
+  title: string = 'Produits';
   produitService: ProduitService = inject(ProduitService);
   produits: Produit[];
 
@@ -23,10 +23,10 @@ export class ProduitsPage implements OnInit {
   isModalOpen = false;
   produitSelec: Produit;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-    this.getProducts()
+    this.getProducts();
   }
 
   getProducts() {
@@ -35,16 +35,17 @@ export class ProduitsPage implements OnInit {
         this.produits = products
         this.produits.sort((a, b) => a.name.localeCompare(b.name));
 
-        this.calculNewPrice()
+        this.calculNewPrice();
       },
-      error: err => console.log(err)
-    })
+      error: (err) => console.log(err),
+    });
   }
 
   calculNewPrice() {
     for (let produit of this.produits) {
       if (produit.discount && produit.discount > 0) {
-        produit['newPrice'] = produit.price - (produit.price * produit.discount / 100);
+        produit['newPrice'] =
+          produit.price - (produit.price * produit.discount) / 100;
       } else {
         produit['newPrice'] = produit.price;
       }
