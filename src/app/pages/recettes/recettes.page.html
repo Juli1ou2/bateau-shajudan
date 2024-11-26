@@ -14,7 +14,7 @@
   <div id="container">
     <ion-grid>
       <ion-row>
-        <ion-col size="auto" style="margin: 0 auto">
+        <ion-col style="margin: 0 auto">
           @for (recette of recettes; track recette.id) {
           <app-list
             (click)="getRecetteInfos(recette)"
