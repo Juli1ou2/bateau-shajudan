@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {ActivatedRoute, Router} from "@angular/router";
+import {Restaurant} from "../../../interface/restaurant";
+import {IonicModule} from "@ionic/angular";
 import {
   IonContent,
   IonHeader,
@@ -26,8 +29,18 @@ import { HeaderComponent } from 'src/app/ui/header/header.component';
 })
 export class InfosRestaurantPage implements OnInit {
   title: string = 'Infos restaurant';
+  restaurant: Restaurant;
 
-  constructor() {}
+  constructor(private route: ActivatedRoute,
+              private router: Router) { }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      if(this.router.getCurrentNavigation()?.extras.state) {
+        this.restaurant = this.router.getCurrentNavigation()?.extras.state?.['restaurant']
+      }
+    })
+  }
 
   ngOnInit() {}
 }

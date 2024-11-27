@@ -6,4 +6,15 @@
       <ion-title size="large">{{title}}</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div id="container">
+    @for (restaurant of restaurants; track restaurant.id) {
+      <app-list
+        (click)="getRestaurantInfo(restaurant)"
+        [cardAlt]="restaurant.alt"
+        [cardSrc]="restaurant.src"
+        [title]="restaurant.title"
+      ></app-list>
+    }
+  </div>
 </ion-content>

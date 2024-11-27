@@ -1,9 +1,38 @@
-<app-header [title]="title"></app-header>
+<app-header [title]="restaurant.title"></app-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">{{title}}</ion-title>
+      <ion-title size="large">{{ restaurant.title }}</ion-title>
     </ion-toolbar>
   </ion-header>
-</ion-content>
+
+  <ion-card id="card-restaurant">
+    <ion-card-header>
+      <ion-card-title class="restaurant-title">{{ restaurant.title }}</ion-card-title>
+    </ion-card-header>
+
+    <img id="image-restaurant-info"
+         [alt]="restaurant.alt"
+         [src]="restaurant.src"
+         class="restaurant-image"
+    />
+
+    <div class="restaurant-details">
+      <p class="restaurant-address">
+        <ion-icon name="location-outline"></ion-icon>
+        {{ restaurant.address }}
+      </p>
+      <p class="restaurant-days">
+        <ion-icon name="calendar-outline"></ion-icon>
+        {{ restaurant.openingDays }}
+      </p>
+      <p class="restaurant-hours">
+        <ion-icon name="time-outline"></ion-icon>
+        {{ restaurant.openingHours }} - {{ restaurant.closingHours }}
+      </p>
+      <ion-card-content class="restaurant-description">
+        {{ restaurant.content }}
+      </ion-card-content>
+    </div>
+  </ion-card>
