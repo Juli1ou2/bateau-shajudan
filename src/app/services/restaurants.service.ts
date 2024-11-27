@@ -7,11 +7,11 @@ import {Observable} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class RestaurantService {
+export class RestaurantsService {
 
   constructor(private http: HttpClient) { }
 
   getRestaurants(): Observable<Restaurant[]> {
-    return this.http.get<Restaurant[]>("assets/data/restaurant.json")
+    return this.http.get<Restaurant[]>("assets/data/restaurants.json")
   }
 }

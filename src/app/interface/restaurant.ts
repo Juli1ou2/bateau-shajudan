@@ -4,4 +4,8 @@ export interface Restaurant {
   src: string;
   title: string;
   content: string;
+  openingHours: string;
+  closingHours: string;
+  openingDays: string;
+  address: string;
 }
