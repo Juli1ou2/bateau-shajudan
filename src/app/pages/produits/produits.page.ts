@@ -84,6 +84,7 @@ export class ProduitsPage implements OnInit {
 
   cancel() {
     this.setOpen(false);
+    this.formGroup.get('quantite')?.setValue(1);
   }
 
   confirm() {
@@ -96,5 +97,6 @@ export class ProduitsPage implements OnInit {
     console.log('totalItems: ', this.panierService.getTotalItems());
     console.log('totalPrix: ', this.panierService.getTotalPrix());
     console.log('totalReduc: ', this.panierService.getTotalReduc());
+    this.formGroup.get('quantite')?.setValue(1);
   }
 }
