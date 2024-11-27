@@ -6,6 +6,7 @@ import {
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
 import { ProduitService } from '../../services/produits.service';
 import { Produit } from '../../core/interfaces/produit';
@@ -44,7 +45,9 @@ export class ProduitsPage implements OnInit {
   ngOnInit() {
     this.getProducts();
     this.formGroup = this.fb.group({
-      quantite: new FormControl(1),
+      quantite: new FormControl(1, [
+        Validators.min(0),
+      ]),
     });
   }
 
