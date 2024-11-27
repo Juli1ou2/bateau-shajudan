@@ -1,9 +1,11 @@
-import {Component, inject, OnInit} from '@angular/core';
+import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {ProduitService} from "../../services/produit.service";
-import {Produit} from "../../core/interface/produit";
-import {IonicModule} from "@ionic/angular";
+import { ProduitService } from '../../services/produit.service';
+import { Produit } from '../../core/interface/produit';
+import { IonicModule, IonModal } from '@ionic/angular';
+import { HeaderComponent } from 'src/app/ui/header/header.component';
+import { OverlayEventDetail } from '@ionic/core/components';
 
 @Component({
   selector: 'app-produits',
@@ -15,7 +17,11 @@ import {IonicModule} from "@ionic/angular";
 export class ProduitsPage implements OnInit {
 
   produitService: ProduitService = inject(ProduitService);
-  produitList: Produit[];
+  produits: Produit[];
+
+  @ViewChild(IonModal) modal: IonModal;
+  isModalOpen = false;
+  produitSelec: Produit;
 
   constructor() { }
 
@@ -45,4 +51,19 @@ export class ProduitsPage implements OnInit {
     }
   }
 
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+  
+  setProduitSelec(produit: Produit){
+    this.produitSelec = produit;
+  }
+
+  cancel() {
+    this.setOpen(false);
+  }
+  
+  confirm() {
+    this.setOpen(false);
+  }
 }

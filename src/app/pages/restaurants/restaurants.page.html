@@ -9,12 +9,12 @@
 
   <div id="container">
     @for (restaurant of restaurants; track restaurant.id) {
-      <app-list
-        (click)="getRestaurantInfo(restaurant)"
-        [cardAlt]="restaurant.alt"
-        [cardSrc]="restaurant.src"
-        [title]="restaurant.title"
-      ></app-list>
+    <app-card
+      (click)="getRestaurantInfo(restaurant)"
+      [cardAlt]="restaurant.alt"
+      [cardSrc]="restaurant.src"
+      [title]="restaurant.title"
+    ></app-card>
     }
   </div>
 </ion-content>
