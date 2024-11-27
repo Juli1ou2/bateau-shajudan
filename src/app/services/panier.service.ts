@@ -1,12 +1,24 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, WritableSignal } from '@angular/core';
+import { Panier, Item } from '../core/interface/panier';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PanierService {
-  totalPrix = signal(0);
-  totalReduc = signal(0);
-  totalItems = signal(0);
+  panier: WritableSignal<Panier> = signal({
+    items: [],
+    totalPrix: 0,
+    totalReduc: 0,
+    totalItems: 0,
+  });
 
-  constructor() { }
+  constructor() {}
+
+  getPanier(){
+    return this.panier();
+  }
+
+  setPanier(panier: Panier){
+    this.panier.set(panier);
+  }
 }
