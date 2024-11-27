@@ -32,8 +32,8 @@ export class ProduitsPage implements OnInit {
   getProducts() {
     this.produitService.getProducts().subscribe({
       next: (products)=> {
-        this.produitList = products
-        this.produitList.sort((a, b) => a.name.localeCompare(b.name));
+        this.produits = products
+        this.produits.sort((a, b) => a.name.localeCompare(b.name));
 
         this.calculNewPrice()
       },
@@ -42,7 +42,7 @@ export class ProduitsPage implements OnInit {
   }
 
   calculNewPrice() {
-    for (let produit of this.produitList) {
+    for (let produit of this.produits) {
       if (produit.discount && produit.discount > 0) {
         produit['newPrice'] = produit.price - (produit.price * produit.discount / 100);
       } else {
