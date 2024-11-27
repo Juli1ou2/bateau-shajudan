@@ -13,8 +13,10 @@ import { OverlayEventDetail } from '@ionic/core/components';
   styleUrls: ['./produits.page.scss'],
   standalone: true,
   imports: [CommonModule, FormsModule, IonicModule, HeaderComponent],
+  imports: [CommonModule, FormsModule, IonicModule, HeaderComponent],
 })
 export class ProduitsPage implements OnInit {
+  title: string = 'Produits';
   title: string = 'Produits';
   produitService: ProduitService = inject(ProduitService);
   produits: Produit[];
@@ -24,8 +26,10 @@ export class ProduitsPage implements OnInit {
   produitSelec: Produit;
 
   constructor() {}
+  constructor() {}
 
   ngOnInit() {
+    this.getProducts();
     this.getProducts();
   }
 
@@ -37,6 +41,8 @@ export class ProduitsPage implements OnInit {
 
         this.calculNewPrice();
       },
+      error: (err) => console.log(err),
+    });
       error: (err) => console.log(err),
     });
   }
