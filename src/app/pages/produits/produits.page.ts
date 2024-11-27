@@ -45,9 +45,7 @@ export class ProduitsPage implements OnInit {
   ngOnInit() {
     this.getProducts();
     this.formGroup = this.fb.group({
-      quantite: new FormControl(1, [
-        Validators.min(0),
-      ]),
+      quantite: new FormControl(1, [Validators.min(0)]),
     });
   }
 
@@ -89,10 +87,22 @@ export class ProduitsPage implements OnInit {
 
   confirm() {
     this.setOpen(false);
-    this.panierService.addPanierItem({
-      produit: this.produitSelec,
-      quantite: this.formGroup.value.quantite,
-    });
+    if (this.panierService.verifyItemPresence(this.produitSelec.id)) {
+      if (this.formGroup.value.quantite === 0) {
+        this.panierService.removePanierItem(this.produitSelec.id);
+      } else {
+        this.panierService.updateQuantitePanierItem(
+          this.produitSelec.id,
+          this.formGroup.value.quantite
+        );
+      }
+    } else {
+      this.panierService.addPanierItem({
+        produit: this.produitSelec,
+        quantite: this.formGroup.value.quantite,
+      });
+    }
+
     console.log('panier: ', this.panierService.getPanier());
     console.log('totalItems: ', this.panierService.getTotalItems());
     console.log('totalPrix: ', this.panierService.getTotalPrix());

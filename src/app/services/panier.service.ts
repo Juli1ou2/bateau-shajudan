@@ -34,27 +34,52 @@ export class PanierService {
 
   constructor() {}
 
-  getPanier() {
+  getPanier(): Panier {
     return this.panier();
   }
-  getTotalItems() {
+  getTotalItems(): number {
     return this.totalItems();
   }
-  getTotalPrix() {
+  getTotalPrix(): number {
     return this.totalPrix();
   }
-  getTotalReduc() {
+  getTotalReduc(): number {
     return this.totalReduc();
   }
 
-  setPanier(panier: Panier) {
+  verifyItemPresence(idItem: number): boolean {
+    for (let item of this.getPanier().items) {
+      if (item.produit.id === idItem) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  setPanier(panier: Panier): void {
     this.panier.set(panier);
   }
 
-  addPanierItem(nouvelItem: Item) {
+  addPanierItem(nouvelItem: Item): void {
     this.panier.update((value) => ({
       ...value,
       items: [...value.items, nouvelItem],
+    }));
+  }
+  updateQuantitePanierItem(idItem: number, nouvelleQuantite: number): void {
+    this.panier.update((value) => ({
+      ...value,
+      items: value.items.map((item) =>
+        item.produit.id === idItem
+          ? { ...item, quantite: nouvelleQuantite }
+          : item
+      ),
+    }));
+  }
+  removePanierItem(idItem: number): void {
+    this.panier.update((value) => ({
+      ...value,
+      items: value.items.filter((item) => item.produit.id !== idItem),
     }));
   }
 }
