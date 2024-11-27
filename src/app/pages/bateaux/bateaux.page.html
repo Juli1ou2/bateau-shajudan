@@ -1,13 +1,9 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Bateaux</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [title]="title"></app-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Bateaux</ion-title>
+      <ion-title size="large">{{title}}</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -16,12 +12,12 @@
       <ion-row>
         <ion-col size="auto" style="margin: 0 auto;">
           @for (bateau of bateauList; track bateau.id) {
-            <app-list
+            <app-card
               (click)="getBateauInfo(bateau)"
               [cardAlt]="bateau.alt"
               [cardSrc]="bateau.src"
               [title]="bateau.title"
-            ></app-list>
+            ></app-card>
           }
         </ion-col>
       </ion-row>

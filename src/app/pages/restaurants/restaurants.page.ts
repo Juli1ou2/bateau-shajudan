@@ -6,6 +6,7 @@ import {ListComponent} from "../../list/list.component";
 import {Restaurant} from "../../interface/restaurant";
 import {RestaurantsService} from "../../services/restaurants.service";
 import {NavigationExtras, Router } from "@angular/router";
+import { HeaderComponent } from 'src/app/ui/header/header.component';
 
 @Component({
   selector: 'app-restaurants',
@@ -15,6 +16,7 @@ import {NavigationExtras, Router } from "@angular/router";
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, ListComponent]
 })
 export class RestaurantsPage implements OnInit {
+  title: string = 'Restaurants';
   restaurants: Restaurant[];
   restaurantService: RestaurantsService = inject(RestaurantsService);
 

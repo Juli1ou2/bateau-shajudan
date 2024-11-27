@@ -4,16 +4,31 @@ import { FormsModule } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Restaurant} from "../../../interface/restaurant";
 import {IonicModule} from "@ionic/angular";
+import {
+  IonContent,
+  IonHeader,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
+import { HeaderComponent } from 'src/app/ui/header/header.component';
 
 @Component({
   selector: 'app-infos-restaurant',
   templateUrl: './infos-restaurant.page.html',
   styleUrls: ['./infos-restaurant.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, IonicModule]
+  imports: [
+    IonContent,
+    IonHeader,
+    IonTitle,
+    IonToolbar,
+    CommonModule,
+    FormsModule,
+    HeaderComponent,
+  ],
 })
 export class InfosRestaurantPage implements OnInit {
-
+  title: string = 'Infos restaurant';
   restaurant: Restaurant;
 
   constructor(private route: ActivatedRoute,
@@ -27,4 +42,5 @@ export class InfosRestaurantPage implements OnInit {
     })
   }
 
+  ngOnInit() {}
 }

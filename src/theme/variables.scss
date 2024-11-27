@@ -1,2 +1,18 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+:root {
+    --ion-font-family: 'Comic Sans MS';
+    // --ion-background-color: var(--ion-color-bleu-1);
+    --ion-tab-bar-background: var(--ion-color-bleu-2);
+    --ion-toolbar-background: var(--ion-color-bleu-2);
+
+    --ion-color-primary: var(--ion-color-bleu-4);
+
+    // PALETTE COULEURS
+    --ion-color-bleu-1: #CAF0F8;
+    --ion-color-bleu-2: #90E0EF;
+    --ion-color-bleu-3: #00B4D8;
+    --ion-color-bleu-4: #0077B6;
+    --ion-color-bleu-5: #03045E;
+}
