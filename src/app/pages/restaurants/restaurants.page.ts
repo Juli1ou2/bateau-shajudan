@@ -15,8 +15,7 @@ import {NavigationExtras, Router } from "@angular/router";
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, ListComponent]
 })
 export class RestaurantsPage implements OnInit {
-
-  restaurantList: Restaurant[];
+  restaurants: Restaurant[];
   restaurantService: RestaurantsService = inject(RestaurantsService);
 
   constructor(private router: Router) { }
@@ -28,7 +27,7 @@ export class RestaurantsPage implements OnInit {
   getRestaurants(): void {
     this.restaurantService.getRestaurants().subscribe({
       next: (restaurants: Restaurant[]) => {
-        this.restaurantList = restaurants
+        this.restaurants = restaurants
       },
       error: err => console.log(err),
     })

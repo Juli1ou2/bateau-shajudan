@@ -12,7 +12,7 @@
   </ion-header>
 
   <div id="container">
-    @for (restaurant of restaurantList; track restaurant.id) {
+    @for (restaurant of restaurants; track restaurant.id) {
       <app-list
         (click)="getRestaurantInfo(restaurant)"
         [cardAlt]="restaurant.alt"
