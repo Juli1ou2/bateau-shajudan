@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import {ListComponent} from "../../list/list.component";
 import {Restaurant} from "../../interface/restaurant";
-import {RestaurantService} from "../../services/restaurant.service";
-import {Router} from "@angular/router";
+import {RestaurantsService} from "../../services/restaurants.service";
+import {NavigationExtras, Router } from "@angular/router";
 
 @Component({
   selector: 'app-restaurants',
@@ -17,7 +17,7 @@ import {Router} from "@angular/router";
 export class RestaurantsPage implements OnInit {
 
   restaurantList: Restaurant[];
-  restaurantService: RestaurantService = inject(RestaurantService);
+  restaurantService: RestaurantsService = inject(RestaurantsService);
 
   constructor(private router: Router) { }
 
@@ -34,8 +34,11 @@ export class RestaurantsPage implements OnInit {
     })
   }
 
-  getRestaurantInfo(id: number) {
-    console.log('id : ' + id)
-    // this.router.navigate([''])
-  }
+  getRestaurantInfo(restaurant: Restaurant) {
+    let navigationExtras: NavigationExtras = {
+      state: {
+        restaurant: restaurant
+      }
+    }
+    this.router.navigate(['infos-restaurant'], navigationExtras)  }
 }

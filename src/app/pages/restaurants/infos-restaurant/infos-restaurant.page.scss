@@ -1,0 +1,79 @@
+#card-restaurant {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 16px;
+  position: relative; /* Nécessaire pour positionner le titre à l'intérieur */
+}
+
+.restaurant-title {
+  font-size: 18px; /* Taille ajustée */
+  font-weight: 600;
+  color: #111111;
+  text-align: center;
+  margin: 8px auto;
+  padding: 8px;
+  background-color: #f8f8f8; /* Fond clair pour le titre */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre */
+  max-width: 90%; /* Limite la largeur à l'intérieur de la carte */
+  position: relative; /* Position dans la carte */
+  top: -20px; /* Décale légèrement vers le haut */
+  z-index: 2; /* Place au-dessus de l'image */
+}
+
+.restaurant-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-details {
+  text-align: center;
+  font-size: 16px;
+  color: #222222;
+}
+
+.restaurant-address,
+.restaurant-days,
+.restaurant-hours {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 8px 0;
+  margin-top: 24px;
+}
+
+.restaurant-address ion-icon,
+.restaurant-days ion-icon,
+.restaurant-hours ion-icon {
+  color: #222222;
+  font-size: 20px;
+}
+
+.restaurant-description {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #222222;
+  font-weight: 500;
+}
+ion-toolbar {
+  display: flex;
+  justify-content: space-between; /* Sépare le titre et le logo */
+  align-items: center;
+  padding: 0 10px; /* Ajoute un espace sur les côtés */
+}
+
+.logo {
+  height: 40px; /* Taille du logo */
+  width: auto;
+  margin-right: 10px; /* Espace entre le logo et le bord */
+  object-fit: contain; /* Maintient les proportions du logo */
+}
