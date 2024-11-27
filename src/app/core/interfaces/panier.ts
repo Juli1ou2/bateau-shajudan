@@ -1,11 +1,10 @@
+import { Produit } from "./produit";
+
 export interface Panier {
   items: Item[];
-  totalPrix: number;
-  totalReduc: number;
-  totalItems: number;
 }
 
 export interface Item {
-  id: number;
+  produit: Produit;
   quantite: number;
 }

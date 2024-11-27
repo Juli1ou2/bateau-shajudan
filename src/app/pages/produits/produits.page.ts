@@ -7,8 +7,8 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { ProduitService } from '../../services/produit.service';
-import { Produit } from '../../core/interface/produit';
+import { ProduitService } from '../../services/produits.service';
+import { Produit } from '../../core/interfaces/produit';
 import { IonicModule, IonModal } from '@ionic/angular';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
 import { PanierService } from 'src/app/services/panier.service';
@@ -44,7 +44,7 @@ export class ProduitsPage implements OnInit {
   ngOnInit() {
     this.getProducts();
     this.formGroup = this.fb.group({
-      quantite: new FormControl('1'),
+      quantite: new FormControl(1),
     });
   }
 
@@ -85,6 +85,13 @@ export class ProduitsPage implements OnInit {
 
   confirm() {
     this.setOpen(false);
-    console.log(this.formGroup.value);
+    this.panierService.addPanierItem({
+      produit: this.produitSelec,
+      quantite: this.formGroup.value.quantite,
+    });
+    console.log('panier: ', this.panierService.getPanier());
+    console.log('totalItems: ', this.panierService.getTotalItems());
+    console.log('totalPrix: ', this.panierService.getTotalPrix());
+    console.log('totalReduc: ', this.panierService.getTotalReduc());
   }
 }
