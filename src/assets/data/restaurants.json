@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "alt": "Photo d'un restaurant élégant avec une décoration moderne",
+    "src": "assets/images/restaurants/restaurant1-logo.png",
+    "title": "Le Gourmet Moderne",
+    "content": "Le Gourmet Moderne propose une cuisine raffinée dans un cadre contemporain, idéal pour les amateurs de gastronomie.",
+    "openingDays": "Lundi - Dimanche",
+    "openingHours": "09:00",
+    "closingHours": "22:00",
+    "address": "123 Avenue des Champs-Élysées, 75008 Paris"
+  },
+  {
+    "id": 2,
+    "alt": "Image d'un restaurant traditionnel avec une terrasse ombragée",
+    "src": "assets/images/restaurants/restaurant2-logo.png",
+    "title": "La Table Champêtre",
+    "content": "La Table Champêtre offre une cuisine régionale authentique, mettant en avant les produits locaux et de saison.",
+    "openingDays": "Mardi - Samedi",
+    "openingHours": "08:00",
+    "closingHours": "21:00",
+    "address": "45 Rue de Rivoli, 75001 Paris"
+  },
+  {
+    "id": 3,
+    "alt": "Photo d'un restaurant en bord de mer avec une vue panoramique",
+    "src": "assets/images/restaurants/restaurant3-logo.png",
+    "title": "Le Rivage Bleu",
+    "content": "Le Rivage Bleu est un restaurant de fruits de mer qui combine saveurs fraîches et cadre idyllique au bord de l'eau.",
+    "openingDays": "Mercredi - Dimanche",
+    "openingHours": "10:00",
+    "closingHours": "23:00",
+    "address": "10 Quai de la Tournelle, 75005 Paris"
+  },
+  {
+    "id": 4,
+    "alt": "Image d'un bistrot chaleureux avec des tables en bois et une ambiance conviviale",
+    "src": "assets/images/restaurants/restaurant4-logo.png",
+    "title": "Chez Marianne",
+    "content": "Chez Marianne est un bistrot accueillant où l'on peut déguster des plats faits maison dans une ambiance détendue.",
+    "openingDays": "Lundi - Vendredi",
+    "openingHours": "07:30",
+    "closingHours": "20:30",
+    "address": "2 Rue des Rosiers, 75004 Paris"
+  }
+]
