@@ -7,7 +7,7 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/angular/standalone';
-import { Restaurant } from '../../interface/restaurant';
+import { Restaurant } from '../../core/interfaces/restaurant';
 import { RestaurantsService } from '../../services/restaurants.service';
 import { NavigationExtras, Router } from '@angular/router';
 import { HeaderComponent } from 'src/app/ui/header/header.component';

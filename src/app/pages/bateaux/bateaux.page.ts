@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from '../../ui/card/card.component';
 import { BateauxService } from '../../services/bateaux.service';
-import { Bateau } from '../../core/interface/bateau';
+import { Bateau } from '../../core/interfaces/bateau';
 import { NavigationExtras, Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from 'src/app/ui/header/header.component';

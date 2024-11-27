@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, effect, inject, OnInit } from '@angular/core';
 import {
   IonTabs,
   IonIcon,
@@ -7,6 +7,7 @@ import {
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { cart, home, boat, fish, restaurant, moonOutline, personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons/icons';
+import { PanierService } from 'src/app/services/panier.service';
 
 @Component({
   selector: 'app-tabs',
@@ -16,8 +17,14 @@ import { cart, home, boat, fish, restaurant, moonOutline, personCircle, personCi
   imports: [IonIcon, IonTabs, IonTabBar, IonTabButton],
 })
 export class TabsComponent implements OnInit {
+  private panierService: PanierService = inject(PanierService);
+  totalItemsPanier: number;
+
   constructor() {
     addIcons({ home, boat, fish, restaurant, cart });
+    effect(() => {
+      this.totalItemsPanier = this.panierService.totalItems();
+    });
   }
 
   ngOnInit() {}

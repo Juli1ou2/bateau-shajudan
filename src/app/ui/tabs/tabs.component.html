@@ -17,7 +17,10 @@
       Restaurants
     </ion-tab-button>
     <ion-tab-button tab="panier">
-      <ion-icon name="cart"></ion-icon>
+      @if (totalItemsPanier>0) {
+      <p class="totalItemsPanier">{{ totalItemsPanier }}</p>
+    }
+    <ion-icon name="cart"></ion-icon>
       Panier
     </ion-tab-button>
   </ion-tab-bar>
