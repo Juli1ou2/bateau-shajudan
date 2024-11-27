@@ -43,7 +43,7 @@ export class ProduitsPage implements OnInit {
 
   calculNewPrice() {
     for (let produit of this.produits) {
-      if (produit.discount && produit.discount > 0) {
+      if (produit.sale) {
         produit['newPrice'] =
           produit.price - (produit.price * produit.discount) / 100;
       } else {
