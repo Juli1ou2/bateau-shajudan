@@ -102,11 +102,6 @@ export class ProduitsPage implements OnInit {
         quantite: this.formGroup.value.quantite,
       });
     }
-
-    console.log('panier: ', this.panierService.getPanier());
-    console.log('totalItems: ', this.panierService.getTotalItems());
-    console.log('totalPrix: ', this.panierService.getTotalPrix());
-    console.log('totalReduc: ', this.panierService.getTotalReduc());
     this.formGroup.get('quantite')?.setValue(1);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, effect, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -8,6 +8,8 @@ import {
   IonToolbar,
 } from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
+import { PanierService } from 'src/app/services/panier.service';
+import { Item } from 'src/app/core/interfaces/panier';
 
 @Component({
   selector: 'app-panier',
@@ -26,8 +28,22 @@ import { HeaderComponent } from 'src/app/ui/header/header.component';
 })
 export class PanierPage implements OnInit {
   title: string = 'Panier';
+  panierService: PanierService = inject(PanierService);
+  panier: Item[];
+  totalItemsPanier: number;
+  totalPrixSansReducPanier: number;
+  totalReducPanier: number;
+  totalPrixPanier: number;
 
-  constructor() {}
+  constructor() {
+    effect(() => {
+      // this.panier = this.panierService.panier();
+      this.totalItemsPanier = this.panierService.totalItems();
+      this.totalPrixSansReducPanier = this.panierService.totalPrixSansReduc();
+      this.totalReducPanier = this.panierService.totalReduc();
+      this.totalPrixPanier = this.panierService.totalPrix();
+    });
+  }
 
   ngOnInit() {}
 }

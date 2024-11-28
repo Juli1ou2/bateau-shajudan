@@ -17,7 +17,7 @@ export class PanierService {
   totalItems: Signal<number> = computed(() =>
     this.panier().items.reduce((total, item) => total + item.quantite, 0)
   );
-  totalPrix: Signal<number> = computed(() =>
+  totalPrixSansReduc: Signal<number> = computed(() =>
     this.panier().items.reduce((total, item) => {
       const prix = item.produit.price * item.quantite;
       return total + prix;
@@ -31,6 +31,9 @@ export class PanierService {
       return total + (prixNormal - prixDiscount);
     }, 0)
   );
+  totalPrix: Signal<number> = computed(
+    () => this.totalPrixSansReduc() - this.totalReduc()
+  );
 
   constructor() {}
 
@@ -42,6 +45,9 @@ export class PanierService {
   }
   getTotalPrix(): number {
     return this.totalPrix();
+  }
+  getTotalPrixSansReduc(): number {
+    return this.totalPrixSansReduc();
   }
   getTotalReduc(): number {
     return this.totalReduc();
