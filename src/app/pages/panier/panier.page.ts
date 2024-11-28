@@ -6,7 +6,11 @@ import {
   IonHeader,
   IonTitle,
   IonToolbar,
-  IonButton, IonIcon, IonCol, IonRow, IonGrid } from '@ionic/angular/standalone';
+  IonButton,
+  IonIcon,
+  IonCol,
+  IonRow,
+  IonGrid, IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
 import { PanierService } from 'src/app/core/services/panier.service';
 import { Panier } from 'src/app/core/interfaces/panier.interface';
@@ -18,7 +22,11 @@ import { send, trashBinOutline } from 'ionicons/icons';
   templateUrl: './panier.page.html',
   styleUrls: ['./panier.page.scss'],
   standalone: true,
-  imports: [IonGrid, IonRow, IonCol, IonIcon, 
+  imports: [IonLabel, IonItem, IonList, 
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonIcon,
     IonButton,
     IonContent,
     IonHeader,
@@ -52,6 +60,11 @@ export class PanierPage implements OnInit {
   ngOnInit() {}
 
   viderPanier() {
+    this.panierService.viderPanier();
+  }
+  
+  commander(){
+    //TODO
     this.panierService.viderPanier();
   }
 }

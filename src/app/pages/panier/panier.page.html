@@ -8,10 +8,40 @@
   </ion-header>
 
   <ion-grid>
-    <ion-row>
-      <div height="50%;"></div>
-    </ion-row>
-    <ion-row class="ion-align-items-center">
+    <ion-row
+      ><ion-col>
+        @if (panier && panier.items.length > 0) {
+        <ion-list>
+          @for (item of panier.items; track $index) {
+          <ion-item>
+            <ion-label>
+              <span class="quantite">{{item.quantite }}x</span>{{
+              item.produit.name }} ({{ item.produit.unit }})
+            </ion-label>
+            <p *ngIf="item.produit.discount">
+              <img
+                [style.width.px]="20"
+                [style.margin-right.px]="13"
+                src="assets/icon/promotion.png"
+                alt="vignette en promotion"
+              />
+            </p>
+            <div class="ion-align-items-center">
+              @if (item.produit.discount) {
+              <s class="ion-no-margin"
+                >{{ item.produit.price | number:'1.2-2' }} €</s
+              >
+              }
+              <p class="ion-no-margin">
+                {{ item.produit.newPrice | number:'1.2-2' }} €
+              </p>
+            </div>
+          </ion-item>
+          } </ion-list
+        >}
+      </ion-col></ion-row
+    >
+    <ion-row class="ion-align-items-center ion-margin-top">
       <ion-col>
         @if (totalReducPanier == 0) {
         <p class="totalPrixPanier">
@@ -31,7 +61,7 @@
       </ion-col>
       <ion-col size="auto">
         <div>
-          <ion-button (click)="viderPanier()"
+          <ion-button (click)="commander()"
             ><ion-icon name="send" slot="start"></ion-icon>commander</ion-button
           >
           <ion-button (click)="viderPanier()" fill="outline"

@@ -39,10 +39,10 @@
         />
       </p>
       <div id="promo-container">
-        <p class="ion-text-end">{{ produit.newPrice | number:'1.2-2' }} €</p>
         <p *ngIf="produit.discount">
           <s>{{ produit.price | number:'1.2-2' }} €</s>
         </p>
+        <p class="ion-text-end">{{ produit.newPrice | number:'1.2-2' }} €</p>
       </div>
     </ion-item>
     }
