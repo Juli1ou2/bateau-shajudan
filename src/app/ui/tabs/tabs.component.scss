@@ -1,0 +1,34 @@
+ion-tab-button {
+  position: relative;
+}
+
+.totalItemsPanier {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: var(--ion-color-danger, red);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+// .totalItemsPanier {
+//   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+// }
+
+// .totalItemsPanier.ng-enter {
+//   transform: scale(0);
+//   opacity: 0;
+// }
+
+// .totalItemsPanier.ng-enter-active {
+//   transform: scale(1);
+//   opacity: 1;
+// }
