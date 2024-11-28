@@ -1,0 +1,9 @@
+.totalPrixPanier {
+    font-weight: 600;
+    color: var(--ion-color-success);
+}
+
+.totalPrixSansReducPanier {
+    text-decoration: line-through;
+    color: var(--ion-color-danger);
+}

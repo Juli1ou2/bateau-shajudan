@@ -7,12 +7,35 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="ion-text-center">
-    <p>
-      -> {{totalPrixSansReducPanier | number:'1.2-2' }} € <br />Réductions : -
-      {{totalReducPanier | number:'1.2-2' }} € <br />TOTAL : {{totalPrixPanier |
-      number:'1.2-2' }} €
-    </p>
-    <ion-button (click)="viderPanier()">Vider</ion-button>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <div height="50%;"></div>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        @if (totalReducPanier == 0) {
+        <p class="totalPrixPanier">
+          TOTAL : {{totalPrixPanier | number:'1.2-2' }} €
+        </p>
+        } @else {
+        <p>
+          <span class="totalPrixSansReducPanier"
+            >TOTAL : {{totalPrixSansReducPanier | number:'1.2-2' }} €</span
+          >
+          <br />Réductions : -{{totalReducPanier | number:'1.2-2' }} €
+          <br /><span class="totalPrixPanier"
+            >TOTAL : {{totalPrixPanier | number:'1.2-2' }} €</span
+          >
+        </p>
+        }
+      </ion-col>
+      <ion-col size="auto">
+        <div>
+          <ion-button (click)="viderPanier()"
+            ><ion-icon name="send" slot="start"></ion-icon>commander</ion-button
+          >
+          <ion-button (click)="viderPanier()" fill="outline"
+            ><ion-icon name="trash-bin-outline"></ion-icon
+          ></ion-button></div></ion-col></ion-row
+  ></ion-grid>
 </ion-content>

@@ -6,18 +6,19 @@ import {
   IonHeader,
   IonTitle,
   IonToolbar,
-  IonButton,
-} from '@ionic/angular/standalone';
+  IonButton, IonIcon, IonCol, IonRow, IonGrid } from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
 import { PanierService } from 'src/app/core/services/panier.service';
 import { Panier } from 'src/app/core/interfaces/panier.interface';
+import { addIcons } from 'ionicons';
+import { send, trashBinOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-panier',
   templateUrl: './panier.page.html',
   styleUrls: ['./panier.page.scss'],
   standalone: true,
-  imports: [
+  imports: [IonGrid, IonRow, IonCol, IonIcon, 
     IonButton,
     IonContent,
     IonHeader,
@@ -38,6 +39,7 @@ export class PanierPage implements OnInit {
   totalPrixPanier: number;
 
   constructor() {
+    addIcons({ trashBinOutline, send });
     effect(() => {
       this.panier = this.panierService.panier();
       this.totalItemsPanier = this.panierService.totalItems();
@@ -49,7 +51,7 @@ export class PanierPage implements OnInit {
 
   ngOnInit() {}
 
-  viderPanier(){
+  viderPanier() {
     this.panierService.viderPanier();
   }
 }
