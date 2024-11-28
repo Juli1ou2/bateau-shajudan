@@ -5,7 +5,9 @@ import {
   IonContent,
   IonHeader,
   IonTitle,
-  IonToolbar, IonButton } from '@ionic/angular/standalone';
+  IonToolbar,
+  IonButton,
+} from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
 import { PanierService } from 'src/app/core/services/panier.service';
 import { Panier } from 'src/app/core/interfaces/panier.interface';
@@ -15,7 +17,8 @@ import { Panier } from 'src/app/core/interfaces/panier.interface';
   templateUrl: './panier.page.html',
   styleUrls: ['./panier.page.scss'],
   standalone: true,
-  imports: [IonButton, 
+  imports: [
+    IonButton,
     IonContent,
     IonHeader,
     IonTitle,
@@ -45,4 +48,8 @@ export class PanierPage implements OnInit {
   }
 
   ngOnInit() {}
+
+  viderPanier(){
+    this.panierService.viderPanier();
+  }
 }
