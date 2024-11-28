@@ -14,6 +14,8 @@ import {
   IonList,
   IonItem,
   IonLabel,
+  IonSelect,
+  IonSelectOption,
 } from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
 import { PanierService } from 'src/app/core/services/panier.service';
@@ -26,6 +28,8 @@ import {
   trashBinOutline,
 } from 'ionicons/icons';
 import { ToastController } from '@ionic/angular';
+import { RestaurantsService } from 'src/app/core/services/restaurants.service';
+import { Restaurant } from 'src/app/core/interfaces/restaurant.interface';
 
 @Component({
   selector: 'app-panier',
@@ -45,6 +49,8 @@ import { ToastController } from '@ionic/angular';
     IonHeader,
     IonTitle,
     IonToolbar,
+    IonSelect,
+    IonSelectOption,
     CommonModule,
     FormsModule,
     HeaderComponent,
@@ -53,15 +59,19 @@ import { ToastController } from '@ionic/angular';
 export class PanierPage implements OnInit {
   title: string = 'Panier';
   panierService: PanierService = inject(PanierService);
+  restaurantsService: RestaurantsService = inject(RestaurantsService);
   toastController: ToastController = inject(ToastController);
   panier: Panier;
   totalItemsPanier: number;
   totalPrixSansReducPanier: number;
   totalReducPanier: number;
   totalPrixPanier: number;
+  restaurants: Restaurant[];
+  pointCollecteSelect: Restaurant;
 
   constructor() {
     addIcons({ trashBinOutline, send, alertCircle, arrowRedoCircle });
+    this.getRestaurants();
     effect(() => {
       this.panier = this.panierService.panier();
       this.totalItemsPanier = this.panierService.totalItems();
@@ -79,14 +89,32 @@ export class PanierPage implements OnInit {
   }
 
   commander() {
-    //TODO
-    this.panierService.viderPanier();
-    this.showCommandeToast();
+    if (this.pointCollecteSelect) {
+      this.panierService.viderPanier();
+      this.showCommandeToast();
+    } else {
+      this.showErreurPointCollecteToast();
+    }
+  }
+
+  getRestaurants(): void {
+    this.restaurantsService.getRestaurants().subscribe({
+      next: (restaurants: Restaurant[]) => {
+        this.restaurants = restaurants;
+      },
+      error: (err) => console.log(err),
+    });
+  }
+
+  onPointCollecteChange(event: any) {
+    this.pointCollecteSelect = event.detail.value;
+    console.log('pointCollectSelec : ', this.pointCollecteSelect.title);
   }
 
   async showCommandeToast() {
     const toast = await this.toastController.create({
-      message: 'Commande envoyée !',
+      message:
+        'Commande envoyée ! à collecter à ' + this.pointCollecteSelect?.title,
       duration: 3000,
       icon: 'arrow-redo-circle',
       position: 'top',
@@ -97,6 +125,16 @@ export class PanierPage implements OnInit {
   async showViderToast() {
     const toast = await this.toastController.create({
       message: 'Panier vidé !',
+      duration: 3000,
+      icon: 'alert-circle',
+      position: 'top',
+    });
+    toast.present();
+  }
+
+  async showErreurPointCollecteToast() {
+    const toast = await this.toastController.create({
+      message: 'Veuillez sélectionner un point de collecte !',
       duration: 3000,
       icon: 'alert-circle',
       position: 'top',

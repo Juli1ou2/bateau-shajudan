@@ -46,8 +46,17 @@
       </ion-col></ion-row
     >
     @if (panier && panier.items.length > 0) {
+      <ion-row><ion-col>
+        <ion-select placeholder="Selectionnez" (ionChange)="onPointCollecteChange($event)">
+          <div slot="label">Point de collecte</div>
+          @for (resto of restaurants; track resto.id) {
+            <ion-select-option [value]="resto">{{resto.title}}</ion-select-option>
+          }
+        </ion-select>
+      </ion-col></ion-row>
     <ion-row class="ion-align-items-center ion-margin-top absolute-footer">
       <ion-col>
+        
         @if (totalReducPanier == 0) {
         <p class="totalPrixPanier">
           TOTAL : {{totalPrixPanier | number:'1.2-2' }} €
