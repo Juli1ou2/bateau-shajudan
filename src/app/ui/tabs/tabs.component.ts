@@ -7,7 +7,7 @@ import {
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { cart, home, boat, fish, restaurant, moonOutline, personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons/icons';
-import { PanierService } from 'src/app/services/panier.service';
+import { PanierService } from 'src/app/core/services/panier.service';
 
 @Component({
   selector: 'app-tabs',

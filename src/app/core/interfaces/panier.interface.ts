@@ -1,4 +1,4 @@
-import { Produit } from "./produit";
+import { Produit } from "./produit.interface";
 
 export interface Panier {
   items: Item[];

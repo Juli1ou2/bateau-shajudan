@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Restaurant } from '../../../core/interfaces/restaurant';
+import { Restaurant } from '../../../core/interfaces/restaurant.interface';
 import {
   IonContent,
   IonHeader,

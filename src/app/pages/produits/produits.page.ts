@@ -8,11 +8,11 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ProduitService } from '../../services/produits.service';
-import { Produit } from '../../core/interfaces/produit';
+import { ProduitService } from '../../core/services/produits.service';
+import { Produit } from '../../core/interfaces/produit.interface';
 import { IonicModule, IonModal } from '@ionic/angular';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
-import { PanierService } from 'src/app/services/panier.service';
+import { PanierService } from 'src/app/core/services/panier.service';
 
 @Component({
   selector: 'app-produits',

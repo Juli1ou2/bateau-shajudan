@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Bateau } from '../../../core/interfaces/bateau';
+import { Bateau } from '../../../core/interfaces/bateau.interface';
 import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
 

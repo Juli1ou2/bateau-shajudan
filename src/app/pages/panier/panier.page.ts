@@ -8,8 +8,8 @@ import {
   IonToolbar,
 } from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
-import { PanierService } from 'src/app/services/panier.service';
-import { Panier } from 'src/app/core/interfaces/panier';
+import { PanierService } from 'src/app/core/services/panier.service';
+import { Panier } from 'src/app/core/interfaces/panier.interface';
 
 @Component({
   selector: 'app-panier',

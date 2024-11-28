@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Storage } from '@ionic/storage-angular';
-import { Panier } from '../core/interfaces/panier';
+import { Panier } from '../interfaces/panier.interface';
 
 @Injectable({
   providedIn: 'root'
