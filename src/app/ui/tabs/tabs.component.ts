@@ -27,5 +27,7 @@ export class TabsComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.panierService.getStoredPanier();
+  }
 }

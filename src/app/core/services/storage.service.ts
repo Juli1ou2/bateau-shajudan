@@ -4,10 +4,10 @@ import { Storage } from '@ionic/storage-angular';
 import { Panier } from '../interfaces/panier.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StorageService {
-  private _storage: Storage | null = null;
+  _storage: Storage | null = null;
 
   constructor(private storage: Storage) {
     this.init();
@@ -16,14 +16,17 @@ export class StorageService {
   async init() {
     const storage = await this.storage.create();
     this._storage = storage;
+
+    let storedPanier = await this.get('panier');
+    console.log('STOREDPANIER', storedPanier);
   }
 
-  public async update(key: string, value: any) {
-    await this._storage?.remove(key);  
+  public async update(key: string, value: any): Promise<void> {
+    await this._storage?.remove(key);
     await this._storage?.set(key, value);
   }
 
-  public async get(key: string): Promise<Panier | null>  {
-    return await this._storage?.get(key);
+  public get(key: string) {
+    return this._storage?.get(key);
   }
 }
