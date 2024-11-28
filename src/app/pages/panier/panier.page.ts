@@ -9,7 +9,7 @@ import {
 } from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
 import { PanierService } from 'src/app/services/panier.service';
-import { Item } from 'src/app/core/interfaces/panier';
+import { Panier } from 'src/app/core/interfaces/panier';
 
 @Component({
   selector: 'app-panier',
@@ -29,7 +29,7 @@ import { Item } from 'src/app/core/interfaces/panier';
 export class PanierPage implements OnInit {
   title: string = 'Panier';
   panierService: PanierService = inject(PanierService);
-  panier: Item[];
+  panier: Panier;
   totalItemsPanier: number;
   totalPrixSansReducPanier: number;
   totalReducPanier: number;
@@ -37,7 +37,7 @@ export class PanierPage implements OnInit {
 
   constructor() {
     effect(() => {
-      // this.panier = this.panierService.panier();
+      this.panier = this.panierService.panier();
       this.totalItemsPanier = this.panierService.totalItems();
       this.totalPrixSansReducPanier = this.panierService.totalPrixSansReduc();
       this.totalReducPanier = this.panierService.totalReduc();

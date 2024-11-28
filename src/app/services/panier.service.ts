@@ -1,11 +1,14 @@
 import {
   computed,
+  effect,
+  inject,
   Injectable,
   Signal,
   signal,
   WritableSignal,
 } from '@angular/core';
 import { Panier, Item } from '../core/interfaces/panier';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root',
@@ -34,8 +37,23 @@ export class PanierService {
   totalPrix: Signal<number> = computed(
     () => this.totalPrixSansReduc() - this.totalReduc()
   );
+  storageService: StorageService = inject(StorageService);
+  localStorageKey: string = 'panier';
 
-  constructor() {}
+  constructor() {
+    // this.initPanier();
+    // effect(() => {
+    //   const currentPanier = this.panier();
+    //   this.storageService.update(this.localStorageKey, currentPanier);
+    // });
+  }
+
+  async initPanier() {
+    const storedPanier = await this.storageService.get(this.localStorageKey);
+    if (storedPanier !== null) {
+      this.setPanier(storedPanier);
+    }
+  }
 
   getPanier(): Panier {
     return this.panier();
@@ -71,6 +89,7 @@ export class PanierService {
       ...value,
       items: [...value.items, nouvelItem],
     }));
+    this.storageService.update(this.localStorageKey, this.getPanier());
   }
   updateQuantitePanierItem(idItem: number, nouvelleQuantite: number): void {
     this.panier.update((value) => ({
@@ -81,11 +100,13 @@ export class PanierService {
           : item
       ),
     }));
+    this.storageService.update(this.localStorageKey, this.getPanier());
   }
   removePanierItem(idItem: number): void {
     this.panier.update((value) => ({
       ...value,
       items: value.items.filter((item) => item.produit.id !== idItem),
     }));
+    this.storageService.update(this.localStorageKey, this.getPanier());
   }
 }
