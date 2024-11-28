@@ -10,8 +10,8 @@ import {
   IonRow,
   IonCol,
 } from '@ionic/angular/standalone';
-import { Recette } from 'src/app/core/interface/recette';
-import { RecettesService } from 'src/app/services/recettes.service';
+import { Recette } from 'src/app/core/interfaces/recette.interface';
+import { RecettesService } from 'src/app/core/services/recettes.service';
 import { CardComponent } from 'src/app/ui/card/card.component';
 import { NavigationExtras, Router } from '@angular/router';
 import { HeaderComponent } from 'src/app/ui/header/header.component';

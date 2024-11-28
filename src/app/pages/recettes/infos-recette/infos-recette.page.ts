@@ -12,7 +12,7 @@ import {
   IonCardHeader,
 } from '@ionic/angular/standalone';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Recette } from 'src/app/core/interface/recette';
+import { Recette } from 'src/app/core/interfaces/recette.interface';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
 
 @Component({

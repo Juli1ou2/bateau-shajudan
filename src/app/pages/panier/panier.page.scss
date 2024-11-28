@@ -1,0 +1,26 @@
+.totalPrixPanier {
+  font-weight: 600;
+  color: var(--ion-color-success);
+}
+
+.totalPrixSansReducPanier {
+  text-decoration: line-through;
+  color: var(--ion-color-danger);
+}
+
+.quantite {
+  padding-right: 5%;
+}
+
+ion-grid {
+  position: relative;
+  min-height: 100%;
+}
+
+.absolute-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px;
+}

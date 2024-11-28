@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Restaurant} from "../interfaces/restaurant.interface";
 import {Observable} from "rxjs";
-import {Produit} from "../core/interface/produit";
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProduitService {
+export class RestaurantsService {
 
   constructor(private http: HttpClient) { }
 
-  getProducts(): Observable<Produit[]> {
-    return this.http.get<Produit[]>('assets/data/produits.json')
+  getRestaurants(): Observable<Restaurant[]> {
+    return this.http.get<Restaurant[]>("assets/data/restaurants.json")
   }
 }
