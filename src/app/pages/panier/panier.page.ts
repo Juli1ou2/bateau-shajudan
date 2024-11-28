@@ -10,19 +10,32 @@ import {
   IonIcon,
   IonCol,
   IonRow,
-  IonGrid, IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
+  IonGrid,
+  IonList,
+  IonItem,
+  IonLabel,
+} from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
 import { PanierService } from 'src/app/core/services/panier.service';
 import { Panier } from 'src/app/core/interfaces/panier.interface';
 import { addIcons } from 'ionicons';
-import { send, trashBinOutline } from 'ionicons/icons';
+import {
+  alertCircle,
+  arrowRedoCircle,
+  send,
+  trashBinOutline,
+} from 'ionicons/icons';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-panier',
   templateUrl: './panier.page.html',
   styleUrls: ['./panier.page.scss'],
   standalone: true,
-  imports: [IonLabel, IonItem, IonList, 
+  imports: [
+    IonLabel,
+    IonItem,
+    IonList,
     IonGrid,
     IonRow,
     IonCol,
@@ -40,6 +53,7 @@ import { send, trashBinOutline } from 'ionicons/icons';
 export class PanierPage implements OnInit {
   title: string = 'Panier';
   panierService: PanierService = inject(PanierService);
+  toastController: ToastController = inject(ToastController);
   panier: Panier;
   totalItemsPanier: number;
   totalPrixSansReducPanier: number;
@@ -47,7 +61,7 @@ export class PanierPage implements OnInit {
   totalPrixPanier: number;
 
   constructor() {
-    addIcons({ trashBinOutline, send });
+    addIcons({ trashBinOutline, send, alertCircle, arrowRedoCircle });
     effect(() => {
       this.panier = this.panierService.panier();
       this.totalItemsPanier = this.panierService.totalItems();
@@ -61,10 +75,32 @@ export class PanierPage implements OnInit {
 
   viderPanier() {
     this.panierService.viderPanier();
+    this.showViderToast();
   }
-  
-  commander(){
+
+  commander() {
     //TODO
     this.panierService.viderPanier();
+    this.showCommandeToast();
+  }
+
+  async showCommandeToast() {
+    const toast = await this.toastController.create({
+      message: 'Commande envoyée !',
+      duration: 3000,
+      icon: 'arrow-redo-circle',
+      position: 'top',
+    });
+    toast.present();
+  }
+
+  async showViderToast() {
+    const toast = await this.toastController.create({
+      message: 'Panier vidé !',
+      duration: 3000,
+      icon: 'alert-circle',
+      position: 'top',
+    });
+    toast.present();
   }
 }
