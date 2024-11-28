@@ -38,9 +38,14 @@
             </div>
           </ion-item>
           } </ion-list
-        >}
+        >} @else {
+        <p class="ion-text-center">
+          Panier vide !<br /><br />Jetez un œil à nos produits ! ;)
+        </p>
+        }
       </ion-col></ion-row
     >
+    @if (panier && panier.items.length > 0) {
     <ion-row class="ion-align-items-center ion-margin-top">
       <ion-col>
         @if (totalReducPanier == 0) {
@@ -67,5 +72,6 @@
           <ion-button (click)="viderPanier()" fill="outline"
             ><ion-icon name="trash-bin-outline"></ion-icon
           ></ion-button></div></ion-col></ion-row
-  ></ion-grid>
+    >}</ion-grid
+  >
 </ion-content>
