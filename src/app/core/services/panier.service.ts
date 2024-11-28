@@ -48,7 +48,8 @@ export class PanierService {
 
   async getStoredPanier() {
     let storedPanier = await this.storageService.get(this.localStorageKey);
-    console.log('STOREDPANIER', storedPanier);
+    console.log('STORED_PANIER', storedPanier);
+    this.setPanier(storedPanier);
   }
 
   getPanier(): Panier {
@@ -101,5 +102,9 @@ export class PanierService {
       ...value,
       items: value.items.filter((item) => item.produit.id !== idItem),
     }));
+  }
+
+  viderPanier(): void {
+    this.storageService.remove(this.localStorageKey);
   }
 }

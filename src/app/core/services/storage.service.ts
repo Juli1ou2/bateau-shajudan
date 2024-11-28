@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { Storage } from '@ionic/storage-angular';
-import { Panier } from '../interfaces/panier.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -16,9 +15,6 @@ export class StorageService {
   async init() {
     const storage = await this.storage.create();
     this._storage = storage;
-
-    let storedPanier = await this.get('panier');
-    console.log('STOREDPANIER', storedPanier);
   }
 
   public async update(key: string, value: any): Promise<void> {
@@ -28,5 +24,9 @@ export class StorageService {
 
   public get(key: string) {
     return this._storage?.get(key);
+  }
+
+  public remove(key: string) {
+    this._storage?.remove(key);
   }
 }

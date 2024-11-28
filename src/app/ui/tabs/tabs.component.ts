@@ -1,4 +1,10 @@
-import { Component, effect, inject, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  effect,
+  inject,
+  OnInit,
+} from '@angular/core';
 import {
   IonTabs,
   IonIcon,
@@ -6,7 +12,7 @@ import {
   IonTabBar,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { cart, home, boat, fish, restaurant, moonOutline, personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons/icons';
+import { cart, home, boat, fish, restaurant } from 'ionicons/icons';
 import { PanierService } from 'src/app/core/services/panier.service';
 
 @Component({
@@ -27,7 +33,10 @@ export class TabsComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    this.panierService.getStoredPanier();
+  ngOnInit() {}
+
+  async ionViewWillEnter() {
+    console.log('ionViewWillEnter déclenché');
+    await this.panierService.getStoredPanier();
   }
 }
