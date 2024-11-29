@@ -46,41 +46,51 @@
       </ion-col></ion-row
     >
     @if (panier && panier.items.length > 0) {
-      <ion-row><ion-col>
-        <ion-select placeholder="Sélectionnez" (ionChange)="onPointCollecteChange($event)">
-          <div slot="label">Point de collecte</div>
-          @for (resto of restaurants; track resto.id) {
-            <ion-select-option [value]="resto">{{resto.title}}</ion-select-option>
+    <div class="absolute-footer">
+      <ion-row
+        ><ion-col>
+          <ion-select
+            placeholder="Sélectionnez"
+            (ionChange)="onPointCollecteChange($event)"
+          >
+            <div slot="label">Point de collecte</div>
+            @for (resto of restaurants; track resto.id) {
+            <ion-select-option [value]="resto"
+              >{{resto.title}}</ion-select-option
+            >
+            }
+          </ion-select>
+        </ion-col></ion-row
+      >
+      <ion-row class="ion-align-items-center ion-margin-top">
+        <ion-col>
+          @if (totalReducPanier == 0) {
+          <p class="totalPrixPanier">
+            TOTAL : {{totalPrixPanier | number:'1.2-2' }} €
+          </p>
+          } @else {
+          <p>
+            <span class="totalPrixSansReducPanier"
+              >TOTAL : {{totalPrixSansReducPanier | number:'1.2-2' }} €</span
+            >
+            <br />Réductions : -{{totalReducPanier | number:'1.2-2' }} €
+            <br /><span class="totalPrixPanier"
+              >TOTAL : {{totalPrixPanier | number:'1.2-2' }} €</span
+            >
+          </p>
           }
-        </ion-select>
-      </ion-col></ion-row>
-    <ion-row class="ion-align-items-center ion-margin-top absolute-footer">
-      <ion-col>
-        
-        @if (totalReducPanier == 0) {
-        <p class="totalPrixPanier">
-          TOTAL : {{totalPrixPanier | number:'1.2-2' }} €
-        </p>
-        } @else {
-        <p>
-          <span class="totalPrixSansReducPanier"
-            >TOTAL : {{totalPrixSansReducPanier | number:'1.2-2' }} €</span
-          >
-          <br />Réductions : -{{totalReducPanier | number:'1.2-2' }} €
-          <br /><span class="totalPrixPanier"
-            >TOTAL : {{totalPrixPanier | number:'1.2-2' }} €</span
-          >
-        </p>
-        }
-      </ion-col>
-      <ion-col size="auto">
-        <div>
-          <ion-button (click)="commander()"
-            ><ion-icon name="send" slot="start"></ion-icon>commander</ion-button
-          >
-          <ion-button (click)="viderPanier()" fill="outline"
-            ><ion-icon name="trash-bin-outline"></ion-icon
-          ></ion-button></div></ion-col></ion-row
-    >}</ion-grid
+        </ion-col>
+        <ion-col size="auto">
+          <div>
+            <ion-button (click)="commander()"
+              ><ion-icon name="send" slot="start"></ion-icon
+              >commander</ion-button
+            >
+            <ion-button (click)="viderPanier()" fill="outline"
+              ><ion-icon name="trash-bin-outline"></ion-icon
+            ></ion-button></div></ion-col
+      ></ion-row>
+    </div>
+    }</ion-grid
   >
 </ion-content>
