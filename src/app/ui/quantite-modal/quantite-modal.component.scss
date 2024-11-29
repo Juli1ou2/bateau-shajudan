@@ -1,0 +1,18 @@
+ion-modal {
+  --max-height: 30%;
+  --border-radius: 10px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  ion-input {
+    font-size: larger;
+  }
+}
+
+ion-avatar {
+  --border-radius: 4px;
+  width: 90px;
+  height: 90px;
+  object-fit: fill;
+  margin: 2% 5% 2% 0;
+}

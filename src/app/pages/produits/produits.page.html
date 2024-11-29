@@ -16,7 +16,7 @@
       [disabled]="!produit.availability"
       style="position: relative"
       lines="none"
-      (click)="setOpen(true); setProduitSelec(produit)"
+      (click)="setOpen(); setProduitSelec(produit)"
     >
       <img
         *ngIf="!produit.availability"
@@ -49,41 +49,5 @@
     }
   </ion-list>
 
-  <ion-modal [isOpen]="isModalOpen">
-    <ng-template>
-      <ion-header>
-        <ion-toolbar>
-          <ion-buttons slot="start">
-            <ion-button (click)="cancel()">Retour</ion-button>
-          </ion-buttons>
-          <ion-title>Quantité</ion-title>
-          <ion-buttons slot="end">
-            <ion-button (click)="confirm()" [strong]="true"
-              >Confirmer</ion-button
-            >
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">
-        <ion-item lines="full" class="ion-margin-bottom"
-          ><ion-avatar>
-            <img [src]="produitSelec.src" [alt]="produitSelec.name" />
-          </ion-avatar>
-          <ion-label>
-            <p>{{ produitSelec.name }} ({{ produitSelec.unit }})</p>
-            <p>{{ produitSelec.comments }}</p>
-          </ion-label></ion-item
-        >
-        <form [formGroup]="formGroup">
-          <ion-input
-            type="number"
-            class="ion-text-center"
-            placeholder="1"
-            formControlName="quantite"
-            min="0"
-          ></ion-input>
-        </form>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
+  <app-quantite-modal #modalComponent [produitSelec]="produitSelec"></app-quantite-modal>
 </ion-content>

@@ -13,20 +13,17 @@ import { Produit } from '../../core/interfaces/produit.interface';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
 import { PanierService } from 'src/app/core/services/panier.service';
 import {
-  IonModal,
-  IonButtons,
   IonContent,
   IonLabel,
   IonHeader,
   IonAvatar,
   IonToolbar,
   IonTitle,
-  IonButton,
   IonItem,
-  IonInput,
   IonList,
   IonListHeader,
 } from '@ionic/angular/standalone';
+import { QuantiteModalComponent } from 'src/app/ui/quantite-modal/quantite-modal.component';
 
 @Component({
   selector: 'app-produits',
@@ -35,25 +32,21 @@ import {
   standalone: true,
   imports: [
     IonItem,
-    IonButton,
     IonLabel,
     IonContent,
-    IonButtons,
-    IonModal,
-    IonButtons,
     IonHeader,
     IonContent,
     IonAvatar,
     IonLabel,
     IonToolbar,
     IonTitle,
-    IonInput,
     IonList,
     IonListHeader,
     CommonModule,
     FormsModule,
     HeaderComponent,
     ReactiveFormsModule,
+    QuantiteModalComponent,
   ],
 })
 export class ProduitsPage implements OnInit {
@@ -61,21 +54,13 @@ export class ProduitsPage implements OnInit {
   panierService: PanierService = inject(PanierService);
   produitService: ProduitService = inject(ProduitService);
   produits: Produit[];
-
-  @ViewChild(IonModal) modal: IonModal;
-  private fb: FormBuilder = inject(FormBuilder);
-  isModalOpen = false;
-  produitSelec: Produit;
-  quantite: number = 0;
-  formGroup: FormGroup;
+  produitSelec: Produit
+  @ViewChild('modalComponent') quantiteModalComponent!: QuantiteModalComponent;
 
   constructor() {}
 
   ngOnInit() {
     this.getProducts();
-    this.formGroup = this.fb.group({
-      quantite: new FormControl(1, [Validators.min(0)]),
-    });
   }
 
   getProducts() {
@@ -101,36 +86,11 @@ export class ProduitsPage implements OnInit {
     }
   }
 
-  setOpen(isOpen: boolean) {
-    this.isModalOpen = isOpen;
-  }
-
   setProduitSelec(produit: Produit) {
     this.produitSelec = produit;
   }
 
-  cancel() {
-    this.setOpen(false);
-    this.formGroup.get('quantite')?.setValue(1);
-  }
-
-  confirm() {
-    this.setOpen(false);
-    if (this.panierService.verifyItemPresence(this.produitSelec.id)) {
-      if (this.formGroup.value.quantite === 0) {
-        this.panierService.removePanierItem(this.produitSelec.id);
-      } else {
-        this.panierService.updateQuantitePanierItem(
-          this.produitSelec.id,
-          this.formGroup.value.quantite
-        );
-      }
-    } else {
-      this.panierService.addPanierItem({
-        produit: this.produitSelec,
-        quantite: this.formGroup.value.quantite,
-      });
-    }
-    this.formGroup.get('quantite')?.setValue(1);
+  setOpen() {
+    this.quantiteModalComponent.open();
   }
 }
