@@ -16,6 +16,7 @@ import {
   IonLabel,
   IonSelect,
   IonSelectOption,
+  IonToast,
 } from '@ionic/angular/standalone';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
 import { PanierService } from 'src/app/core/services/panier.service';
@@ -51,6 +52,7 @@ import { Restaurant } from 'src/app/core/interfaces/restaurant.interface';
     IonToolbar,
     IonSelect,
     IonSelectOption,
+    IonToast,
     CommonModule,
     FormsModule,
     HeaderComponent,

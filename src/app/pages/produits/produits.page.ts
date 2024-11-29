@@ -10,9 +10,23 @@ import {
 } from '@angular/forms';
 import { ProduitService } from '../../core/services/produits.service';
 import { Produit } from '../../core/interfaces/produit.interface';
-import { IonicModule, IonModal } from '@ionic/angular';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
 import { PanierService } from 'src/app/core/services/panier.service';
+import {
+  IonModal,
+  IonButtons,
+  IonContent,
+  IonLabel,
+  IonHeader,
+  IonAvatar,
+  IonToolbar,
+  IonTitle,
+  IonButton,
+  IonItem,
+  IonInput,
+  IonList,
+  IonListHeader,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-produits',
@@ -20,9 +34,24 @@ import { PanierService } from 'src/app/core/services/panier.service';
   styleUrls: ['./produits.page.scss'],
   standalone: true,
   imports: [
+    IonItem,
+    IonButton,
+    IonLabel,
+    IonContent,
+    IonButtons,
+    IonModal,
+    IonButtons,
+    IonHeader,
+    IonContent,
+    IonAvatar,
+    IonLabel,
+    IonToolbar,
+    IonTitle,
+    IonInput,
+    IonList,
+    IonListHeader,
     CommonModule,
     FormsModule,
-    IonicModule,
     HeaderComponent,
     ReactiveFormsModule,
   ],
