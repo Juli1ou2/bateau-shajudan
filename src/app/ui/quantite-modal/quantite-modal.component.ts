@@ -53,7 +53,7 @@ export class QuantiteModalComponent implements OnInit {
   private fb: FormBuilder = inject(FormBuilder);
   panierService: PanierService = inject(PanierService);
   isModalOpen = false;
-  @Input() produitSelec: Produit;
+  produitSelec: Produit;
   quantite: number = 0;
   formGroup: FormGroup;
 
@@ -65,7 +65,8 @@ export class QuantiteModalComponent implements OnInit {
     });
   }
 
-  @Input() open() {
+  @Input() open(produitSelec: Produit) {
+    this.produitSelec = produitSelec;
     if (
       this.produitSelec &&
       this.panierService.verifyItemPresence(this.produitSelec.id)

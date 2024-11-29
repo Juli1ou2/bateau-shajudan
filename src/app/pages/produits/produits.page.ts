@@ -89,8 +89,4 @@ export class ProduitsPage implements OnInit {
   setProduitSelec(produit: Produit) {
     this.produitSelec = produit;
   }
-
-  setOpen() {
-    this.quantiteModalComponent.open();
-  }
 }

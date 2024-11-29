@@ -16,7 +16,7 @@
       [disabled]="!produit.availability"
       style="position: relative"
       lines="none"
-      (click)="setOpen(); setProduitSelec(produit)"
+      (click)="setProduitSelec(produit); this.quantiteModalComponent.open(produitSelec)"
     >
       <img
         *ngIf="!produit.availability"
@@ -49,5 +49,5 @@
     }
   </ion-list>
 
-  <app-quantite-modal #modalComponent [produitSelec]="produitSelec"></app-quantite-modal>
+  <app-quantite-modal #modalComponent></app-quantite-modal>
 </ion-content>

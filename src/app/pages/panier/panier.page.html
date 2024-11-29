@@ -13,7 +13,9 @@
         @if (panier && panier.items.length > 0) {
         <ion-list>
           @for (item of panier.items; track $index) {
-          <ion-item>
+          <ion-item
+            (click)="setProduitSelec(item.produit); this.quantiteModalComponent.open(produitSelec)"
+          >
             <ion-label>
               <span class="quantite">{{item.quantite }}x</span>{{
               item.produit.name }} ({{ item.produit.unit }})
@@ -95,4 +97,6 @@
     </div>
     }</ion-grid
   >
+
+  <app-quantite-modal #modalComponent></app-quantite-modal>
 </ion-content>

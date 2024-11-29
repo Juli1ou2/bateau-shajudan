@@ -1,4 +1,4 @@
-import { Component, effect, inject, OnInit } from '@angular/core';
+import { Component, effect, inject, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -31,6 +31,9 @@ import {
 import { ToastController } from '@ionic/angular';
 import { RestaurantsService } from 'src/app/core/services/restaurants.service';
 import { Restaurant } from 'src/app/core/interfaces/restaurant.interface';
+import { Produit } from 'src/app/core/interfaces/produit.interface';
+import { ProduitService } from 'src/app/core/services/produits.service';
+import { QuantiteModalComponent } from 'src/app/ui/quantite-modal/quantite-modal.component';
 
 @Component({
   selector: 'app-panier',
@@ -56,11 +59,13 @@ import { Restaurant } from 'src/app/core/interfaces/restaurant.interface';
     CommonModule,
     FormsModule,
     HeaderComponent,
+    QuantiteModalComponent,
   ],
 })
 export class PanierPage implements OnInit {
   title: string = 'Panier';
   panierService: PanierService = inject(PanierService);
+  produitService: ProduitService = inject(ProduitService);
   restaurantsService: RestaurantsService = inject(RestaurantsService);
   toastController: ToastController = inject(ToastController);
   panier: Panier;
@@ -69,7 +74,19 @@ export class PanierPage implements OnInit {
   totalReducPanier: number;
   totalPrixPanier: number;
   restaurants: Restaurant[];
-  pointCollecteSelect: Restaurant;
+  pointCollecteSelect: Restaurant = {
+    id: 0,
+    alt: '',
+    src: '',
+    title: '',
+    content: '',
+    openingHours: '',
+    closingHours: '',
+    openingDays: '',
+    address: ''
+  };
+  produitSelec: Produit
+  @ViewChild('modalComponent') quantiteModalComponent!: QuantiteModalComponent;
 
   constructor() {
     addIcons({ trashBinOutline, send, alertCircle, arrowRedoCircle });
@@ -91,7 +108,7 @@ export class PanierPage implements OnInit {
   }
 
   commander() {
-    if (this.pointCollecteSelect.title) {
+    if (this.pointCollecteSelect.title !== '') {
       this.showCommandeToast();
       this.panierService.viderPanier();
       this.pointCollecteSelect = {
@@ -117,6 +134,10 @@ export class PanierPage implements OnInit {
       },
       error: (err) => console.log(err),
     });
+  }
+
+  setProduitSelec(produit: Produit) {
+    this.produitSelec = produit;
   }
 
   onPointCollecteChange(event: any) {
