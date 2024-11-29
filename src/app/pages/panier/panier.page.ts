@@ -91,9 +91,20 @@ export class PanierPage implements OnInit {
   }
 
   commander() {
-    if (this.pointCollecteSelect) {
-      this.panierService.viderPanier();
+    if (this.pointCollecteSelect.title) {
       this.showCommandeToast();
+      this.panierService.viderPanier();
+      this.pointCollecteSelect = {
+        id: 0,
+        alt: '',
+        src: '',
+        title: '',
+        content: '',
+        openingHours: '',
+        closingHours: '',
+        openingDays: '',
+        address: ''
+      }
     } else {
       this.showErreurPointCollecteToast();
     }
