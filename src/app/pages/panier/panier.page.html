@@ -47,7 +47,7 @@
     >
     @if (panier && panier.items.length > 0) {
       <ion-row><ion-col>
-        <ion-select placeholder="Selectionnez" (ionChange)="onPointCollecteChange($event)">
+        <ion-select placeholder="Sélectionnez" (ionChange)="onPointCollecteChange($event)">
           <div slot="label">Point de collecte</div>
           @for (resto of restaurants; track resto.id) {
             <ion-select-option [value]="resto">{{resto.title}}</ion-select-option>
