@@ -6,6 +6,9 @@ import {
   IonHeader,
   IonTitle,
   IonToolbar,
+  IonCol,
+  IonRow,
+  IonGrid,
 } from '@ionic/angular/standalone';
 import { Restaurant } from '../../core/interfaces/restaurant.interface';
 import { RestaurantsService } from '../../core/services/restaurants.service';
@@ -19,6 +22,9 @@ import { CardComponent } from 'src/app/ui/card/card.component';
   styleUrls: ['./restaurants.page.scss'],
   standalone: true,
   imports: [
+    IonCol,
+    IonRow,
+    IonGrid,
     IonContent,
     IonHeader,
     IonTitle,

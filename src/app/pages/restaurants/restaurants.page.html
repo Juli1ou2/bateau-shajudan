@@ -8,13 +8,19 @@
   </ion-header>
 
   <div id="container">
-    @for (restaurant of restaurants; track restaurant.id) {
-    <app-card
-      (click)="getRestaurantInfo(restaurant)"
-      [cardAlt]="restaurant.alt"
-      [cardSrc]="restaurant.src"
-      [title]="restaurant.title"
-    ></app-card>
-    }
+    <ion-grid>
+      <ion-row>
+        <ion-col style="margin: 0 auto">
+          @for (restaurant of restaurants; track restaurant.id) {
+          <app-card
+            (click)="getRestaurantInfo(restaurant)"
+            [cardAlt]="restaurant.alt"
+            [cardSrc]="restaurant.src"
+            [title]="restaurant.title"
+          ></app-card>
+          }
+        </ion-col></ion-row
+      ></ion-grid
+    >
   </div>
 </ion-content>
