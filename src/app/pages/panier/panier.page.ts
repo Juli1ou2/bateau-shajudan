@@ -55,7 +55,7 @@ import { QuantiteModalComponent } from 'src/app/ui/quantite-modal/quantite-modal
     IonToolbar,
     IonSelect,
     IonSelectOption,
-    IonToast,
+    IonToast, //pour être accessible sur téléphone
     CommonModule,
     FormsModule,
     HeaderComponent,
@@ -83,9 +83,9 @@ export class PanierPage implements OnInit {
     openingHours: '',
     closingHours: '',
     openingDays: '',
-    address: ''
+    address: '',
   };
-  produitSelec: Produit
+  produitSelec: Produit;
   @ViewChild('modalComponent') quantiteModalComponent!: QuantiteModalComponent;
 
   constructor() {
@@ -120,8 +120,8 @@ export class PanierPage implements OnInit {
         openingHours: '',
         closingHours: '',
         openingDays: '',
-        address: ''
-      }
+        address: '',
+      };
     } else {
       this.showErreurPointCollecteToast();
     }

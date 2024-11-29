@@ -1,9 +1,7 @@
 import {
-  AfterViewInit,
   Component,
   effect,
   inject,
-  OnInit,
 } from '@angular/core';
 import {
   IonTabs,
@@ -22,7 +20,7 @@ import { PanierService } from 'src/app/core/services/panier.service';
   standalone: true,
   imports: [IonIcon, IonTabs, IonTabBar, IonTabButton],
 })
-export class TabsComponent implements OnInit {
+export class TabsComponent {
   private panierService: PanierService = inject(PanierService);
   totalItemsPanier: number;
 
@@ -32,8 +30,6 @@ export class TabsComponent implements OnInit {
       this.totalItemsPanier = this.panierService.totalItems();
     });
   }
-
-  ngOnInit() {}
 
   ionViewWillEnter() {
     console.log('ionViewWillEnter déclenché');

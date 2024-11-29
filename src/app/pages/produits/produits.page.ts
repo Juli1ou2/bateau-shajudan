@@ -1,13 +1,6 @@
 import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProduitService } from '../../core/services/produits.service';
 import { Produit } from '../../core/interfaces/produit.interface';
 import { HeaderComponent } from 'src/app/ui/header/header.component';
@@ -54,7 +47,7 @@ export class ProduitsPage implements OnInit {
   panierService: PanierService = inject(PanierService);
   produitService: ProduitService = inject(ProduitService);
   produits: Produit[];
-  produitSelec: Produit
+  produitSelec: Produit;
   @ViewChild('modalComponent') quantiteModalComponent!: QuantiteModalComponent;
 
   constructor() {}
