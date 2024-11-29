@@ -35,7 +35,7 @@ export class TabsComponent implements OnInit {
 
   ngOnInit() {}
 
- ionViewWillEnter() {
+  ionViewWillEnter() {
     console.log('ionViewWillEnter déclenché');
     this.panierService.getStoredPanier();
   }
